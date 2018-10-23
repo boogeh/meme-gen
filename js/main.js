@@ -8,9 +8,9 @@ function init() {
 function renderGallery() {
     var elGallery = document.querySelector('.gallery')
     var gallery = getImgs()
-    var strHtmls = gallery.map(function(img) {
+    var strHtmls = gallery.map(function (img) {
         return `<div class="image image-${img.id}">
-                <img src="${img.url}" onclick="onImgSelect(this)">
+                <img src="${img.url}" onclick="onImgSelect(this)"></img>
                 </div>`
     })
     elGallery.innerHTML = strHtmls.join('')
