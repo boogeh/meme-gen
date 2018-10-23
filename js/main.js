@@ -27,3 +27,6 @@ function onImgSelect(img) {
 function onBackBtn(){
     backToGallery();
 }
+
+
+
