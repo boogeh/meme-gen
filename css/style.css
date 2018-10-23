@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.canvas-page{
+.canvas-modal{
     border: 1px solid gray;
 
     width: 90vw;

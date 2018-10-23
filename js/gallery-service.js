@@ -14,7 +14,7 @@ function createImgs() {
 
 function createImg(url, ...keywords) {
     var img = {
-        gId: gId++,
+        id: gId++,
         url,
         keywords,
     }
