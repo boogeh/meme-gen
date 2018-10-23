@@ -1,25 +1,25 @@
 'use strict'
 
+const IMG_COUNT = 25
 var gId = 1
-var gImgs = [
-    {
-        id: 1,
-        url: 'meme-imgs/1.jpg',
-        keywords: ['happy, funny, sababa'],
-    },
-    {
-        id: 2,
-        url: 'meme-imgs/2.jpg',
-        keywords: ['happy, funny, sababa'],
-    },
-    {
-        id: 3,
-        url: 'meme-imgs/3.jpg',
-        keywords: ['happy, funny, sababa'],
-    },
-]
+var gImgs = createImgs()
 
-function createGimgs() {}
+function createImgs() {
+    var imgs = []
+    for (let i = 1; i <= IMG_COUNT; i++) {
+        imgs.push(createImg(`meme-imgs/${i}.jpg`, 'happy', 'funny'))
+    }
+    return imgs;
+}
+
+function createImg(url, ...keywords) {
+    var img = {
+        gId: gId++,
+        url,
+        keywords,
+    }
+    return img
+}
 
 function getImgs () {
     return gImgs
