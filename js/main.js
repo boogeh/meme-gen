@@ -16,14 +16,18 @@ function renderGallery() {
     elGallery.innerHTML = strHtmls.join('')
 }
 
-function onImgSelect(img) {
+function onImgSelect(elImg) {
     document.querySelector('.canvas-container').classList.remove('hide');
     document.querySelector('.gallery-container').classList.add('hide');
-
+    
     setCanvas()
-    drawImage(img);
+    drawImage(elImg);
 }
 
 function onBackBtn(){
     backToGallery();
+}
+
+function onChangeText(text) {
+    changeText(text)
 }

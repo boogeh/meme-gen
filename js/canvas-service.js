@@ -2,6 +2,17 @@
 
 var gCanvas;
 var gCtx;
+var gSettings = {
+    elImg: '',
+    line1: '',
+    line2: '',
+    fontSize: '',
+    strokeColor: '#000000',
+    fillColor: '#ffffff',
+    font: 'Arial'
+
+}
+
 
 function setCanvas() {
     var elCanvasDiv = document.querySelector('.canvas-wrapper')
@@ -10,15 +21,37 @@ function setCanvas() {
     gCtx = gCanvas.getContext('2d')
 }
 
-function drawImage(img) {
-    console.log(img)
-    var ratio = img.naturalWidth / img.naturalHeight;
+function drawImage(elImg) {
+    console.log(elImg)
+    var ratio = elImg.naturalWidth / elImg.naturalHeight;
     gCanvas.height = gCanvas.width / ratio;
-    gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight,
+    gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight,
         0, 0, gCanvas.width, gCanvas.height);
+    setFontSize()
+    gSettings.elImg = elImg
 }
 
 function backToGallery() {
     document.querySelector('.canvas-container').classList.add('hide');
     document.querySelector('.gallery-container').classList.remove('hide');
 }
+
+function changeText(text) {
+    var elImg = gSettings.elImg
+    drawImage(elImg)
+    gSettings.line1 = text
+    gCtx.font = gSettings.fontSize + 'px ' + gSettings.font
+    gCtx.strokeStyle = gSettings.strokeColor
+    gCtx.fillStyle = gSettings.fillColor
+    gCtx.lineWidth = 7
+    gCtx.strokeText(`${text}`, 70,70)
+    gCtx.fillText(`${text}`, 70,70)
+}
+
+function setFontSize() {
+     gSettings.fontSize = gCanvas.height / 10
+}
+
+// function getElImg(elImg) {
+//     gSettings.elImg = elImg
+// }
