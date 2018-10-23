@@ -28,11 +28,6 @@ function onBackBtn(){
     backToGallery();
 }
 
-<<<<<<< HEAD
 function onChangeText(text) {
     changeText(text)
 }
-=======
-
-
->>>>>>> 86d4a3fff1fa0819eceb4bf88449a87cff8c3105
