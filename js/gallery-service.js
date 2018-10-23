@@ -21,6 +21,13 @@ function createImg(url, ...keywords) {
     return img
 }
 
-function getImgs () {
+function getImgById(imgId) {
+    var findImg = gImgs.find(function (img) {
+        return imgId === img.id
+    })
+    return findImg;
+}
+
+function getImgs() {
     return gImgs
 }

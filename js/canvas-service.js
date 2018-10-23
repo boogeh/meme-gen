@@ -11,8 +11,8 @@ function setCanvas() {
 }
 
 function drawImage(img) {
-    // canvas height same as img height
-    gCanvas.height = img.clientHeight
-    gCtx.drawImage(img, 0, 0, img.width, img.height,     // source rectangle
+    console.log(img)
+    gCanvas.height = img.naturalHeight
+    gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight,     // source rectangle
                         0, 0, gCanvas.width, gCanvas.height);
 }
