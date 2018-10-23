@@ -12,8 +12,9 @@ function setCanvas() {
 
 function drawImage(img) {
     console.log(img)
-    gCanvas.height = img.naturalHeight
-    gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight,     // source rectangle
+    var ratio = img.naturalWidth / img.naturalHeight;
+    gCanvas.height = gCanvas.width / ratio;
+    gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight,
         0, 0, gCanvas.width, gCanvas.height);
 }
 
