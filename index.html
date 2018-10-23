@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Meme Generator</title>
 </head>
 
 <body onload="init()">
     <header class="container">
-        <div class="header-content">header</div>
+        <div class="header-content flex">
+            <h1>Meme Generator</h1>
+
+            <div class="spinner-master">
+                <input type="checkbox" id="spinner-form2" />
+                <label class="spinner-spin2" for="spinner-form2">
+                    <div class="spinner2 diagonal part-1"></div>
+                    <div class="spinner2 horizontal"></div>
+                    <div class="spinner2 diagonal part-2"></div>
+                </label>
+            </div>
+        </div>
     </header>
     <main class="container main-container">
         <section class="gallery-container">
@@ -19,19 +31,28 @@
         </section>
         <section class="canvas-container hide">
             <!-- TODO: move height and width to the JS -->
-            <button class="btn-closeEditor" onclick="onBackBtn()">Back To Gallery</button>
+            <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">◀</span> Back To Gallery</button>
             <div class="canvas-wrapper">
                 <canvas id="main-canvas"></canvas>
             </div>
-            <div class="canvas-controllers flex">
-                <div class="buttons">
+         
+            <div class="canvas-controllers flex column">
+                <div class="buttons flex row">
                     <input type="color" class="colorPick">
+                    <!-- <input type="color" class="colorPick" value="white"> -->
                     <button class="font-plus">+</button>
+                    <div class="dontLine">Font Size:<span class="fontSize"></span></div>
                     <button class="font-minus">-</button>
                 </div>
+<<<<<<< HEAD
                 <div class="input-lines">
                     <input type="text" placeholder="Add line 1" id="text-line1" onkeydown="onChangeText(this.value)">
                     <input type="text" placeholder="Add line 2" id="text-line2">
+=======
+                <div class="input-lines flex column ">
+                    <input type="text" placeholder="Add line 1">
+                    <input type="text" placeholder="Add line 2">
+>>>>>>> 86d4a3fff1fa0819eceb4bf88449a87cff8c3105
                 </div>
             </div>
         </section>
