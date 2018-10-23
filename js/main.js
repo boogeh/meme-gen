@@ -9,7 +9,9 @@ function renderGallery() {
     var elGallery = document.querySelector('.gallery')
     var gallery = getImgs()
     var strHtmls = gallery.map(function(img) {
-        return `<img src="${img.url}" onclick="onImgSelect(this)">`
+        return `<div class="image image-${img.id}">
+                <img src="${img.url}" onclick="onImgSelect(this)">
+                </div>`
     })
     elGallery.innerHTML = strHtmls.join('')
 }

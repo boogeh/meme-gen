@@ -5,12 +5,7 @@ var gCtx;
 
 function setCanvas() {
     gCanvas = document.querySelector('#main-canvas')
-<<<<<<< HEAD
-    gCanvas.style.width ='100%';
-=======
-    gCanvas.width ='100%';
-    // gCanvas.style.width ='';
->>>>>>> 0807bb985a117860c3da3fab3e3e3581890231d9
+    gCanvas.width = '100%';
     gCtx = gCanvas.getContext('2d')
 }
  
