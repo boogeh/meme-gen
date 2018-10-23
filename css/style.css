@@ -3,13 +3,16 @@
     box-sizing: border-box;
 }
 
-.canvas-modal{
+.canvas-container{
     border: 1px solid gray;
 
     width: 100%;
     margin: 0 auto;
     margin-bottom: 10px;
 }
+/* @media (min-width:567px) */
+
+
 canvas{
     border: 1px solid gray;
 }
@@ -24,6 +27,10 @@ canvas{
     max-width: 980px;
     margin: 0 auto;
     padding: 0 15px;
+}
+.gallery-container{
+    
+
 }
 .gallery{
     /* object-fit: cover; */
