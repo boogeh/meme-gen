@@ -17,5 +17,13 @@ function renderGallery() {
 }
 
 function onImgSelect(img) {
-    drawImage(img)
+    document.querySelector('.canvas-container').classList.remove('hide');
+    document.querySelector('.gallery-container').classList.add('hide');
+
+    setCanvas()
+    drawImage(img);
+}
+
+function onBackBtn(){
+    backToGallery();
 }

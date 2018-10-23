@@ -17,20 +17,21 @@
         <section class="gallery-container">
             <div class="gallery"></div>
         </section>
-        <section class="canvas-container">
+        <section class="canvas-container hide">
             <!-- TODO: move height and width to the JS -->
+            <button class="btn-closeEditor" onclick="onBackBtn()">Back To Gallery</button>
             <div class="canvas-wrapper">
                 <canvas id="main-canvas"></canvas>
             </div>
-            <div class="canvas-controllers">
+            <div class="canvas-controllers flex">
                 <div class="buttons">
-                    <input type="color">
+                    <input type="color" class="colorPick">
                     <button class="font-plus">+</button>
                     <button class="font-minus">-</button>
                 </div>
                 <div class="input-lines">
-                    <input type="text">
-                    <input type="text">
+                    <input type="text" placeholder="Add line 1">
+                    <input type="text" placeholder="Add line 2">
                 </div>
             </div>
         </section>
