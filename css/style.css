@@ -32,15 +32,16 @@ canvas{
 }
 
 .gallery{
+<<<<<<< HEAD
     /* object-fit: cover; */
     max-width: 100%;
+=======
+    max-width: 100vw;
+>>>>>>> 63174dea0159abe0fad9b780308ed513da17725a
     display: grid;
     grid-gap: 15px;
-    /* grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px); */
+    
     grid-template-columns: repeat(auto-fill , minmax(100px, 1fr));
-    /* grid-template-rows: repeat(auto-fill , ); */
-
 }
 
 img{
