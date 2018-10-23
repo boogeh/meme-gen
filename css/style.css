@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.canvas-wrapper{
+.canvas-container{
     border: 1px solid gray;
     width: 100%;
     margin: 0 auto;
@@ -11,6 +11,9 @@
 }
 /* @media (min-width:567px) */
 
+.canvas-wrapper {
+    width: 100%
+}
 
 canvas{
     border: 1px solid gray;
@@ -30,7 +33,7 @@ canvas{
 
 .gallery{
     /* object-fit: cover; */
-    max-width: 100vw;
+    max-width: 100%;
     display: grid;
     grid-gap: 15px;
     /* grid-template-columns: repeat(3, 100px);
