@@ -12,7 +12,7 @@
 
 <body onload="init()">
     <header class="container">
-        <div class="header-content ">
+        <div class="header-content flex">
             <h1>Meme Generator</h1>
             <div class="spinner-master">
                 <input type="checkbox" id="spinner-form2" />
@@ -23,44 +23,49 @@
                 </label>
             </div>
         </div>
-
     </header>
     <main class="container main-container">
-        <div class="filterBox">
-            <input type="text" class="filterImg" oninput="filterImg(this.value)" placeholder="Filter By Keywords">
-            <select class="drop-down img=filter" onchange="filterByWord(this.value)">
-                    <option selected="selected">All</option>
+        <section class="gallery-container">
+            <div class="filterBox flex">
+                <input type="text" class="filterImg" oninput="filterGImgs(this.value)" placeholder="Filter By Keywords">
+                <select class="drop-down img=filter" onchange="filterByDropdown(this.value)">
+                    <option selected="selected" value="all">All</option>
                     <option value="funny">Funny</option>
                     <option value="baby">Babies</option>
                     <option value="politics">Politics</option>
                     <option value="animal">Animals</option>
                 </select>
-        </div>
-        <section class="gallery-container">
+            </div>
             <div class="gallery"></div>
         </section>
         <section class="canvas-container hide">
             <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">➜</span> Back To Gallery</button>
             <div class="canvas-wrapper">
-                <canvas id="main-canvas"></canvas>
+                <canvas class="main-canvas"></canvas>
             </div>
 
             <div class="canvas-controllers flex column">
                 <div class="buttons flex row">
-                    Fill Color:
-                    <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
-                    Stroke Color:
-                    <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
-                    <button class="font-plus" onclick="fontPlus()">+</button>
-                    <div class="dontLine">Font Size:<span class="fontSize"></span></div>
-                    <button class="font-minus" onclick="fontMinus()">-</button>
-                    Shadow
-                    <input type="checkbox" class="shadow-checkbox">
+                    <div class="color-input">
+                        Fill Color
+                        <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
+                    </div>
+                    <div class="color-input">
+                        Stroke Color
+                        <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
+                    </div>
+                    <div class="font-input flex row">
+                        <div class="dontLine">Font Size<span class="fontSize"></span></div>
+                        <button class="font-plus" onclick="fontPlus()">+</button>
+                        <button class="font-minus" onclick="fontMinus()">-</button>
+                        Shadow
+                        <input type="checkbox" class="shadow-checkbox">
+                    </div>
                     <button class="btn "> <a class=" btn-save" onclick="downloadCanvas(this)">save</a></button>
                 </div>
                 <div class="input-lines flex column">
-                    <input type="text" placeholder="Add line 1" id="line1" onkeyup="onSetText(this)">
-                    <input type="text" placeholder="Add line 2" id="line2" onkeyup="onSetText(this)">
+                    <input type="text" placeholder="Add line 1" class="input-line line1" onkeyup="onSetText(this)">
+                    <input type="text" placeholder="Add line 2" class="input-line line2" onkeyup="onSetText(this)">
                 </div>
             </div>
         </section>

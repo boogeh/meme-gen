@@ -47,30 +47,35 @@ function createImg(url, ...keywords) {
 }
 
 function getImgById(imgId) {
-    var findImg = gImgs.find(img=>{
+    var findImg = gImgs.find(img => {
         return imgId === img.id
     })
     return findImg;
 }
 
 function getImgs() {
+<<<<<<< HEAD
     if(gFilteredImg) return gFilteredImg
     else return gImgs
+=======
+    if (gFilteredImg) return gFilteredImg;
+    else return gImgs;
+>>>>>>> 92c6386725abda1a7904d52e6815c7c53c1b8c25
 }
 
-function filterImg(searchWord) {
-    var filteredImg = gImgs.filter(img => {
+function filterGImgs(keyword) {
+    gFilteredImg = gImgs.filter(img => {
         var keywords = img.keywords
         return keywords.some(word => {
-            return (word.includes(searchWord))
+            return (word.includes(keyword))
         })
     })
-    console.log('filtered: ', filteredImg);
-    gFilteredImg = filteredImg;
+    if (keyword === 'all') gFilteredImg = gImgs
+
     renderGallery()
 }
 
-function filterByWord(keyword){
-    filterImg(keyword);
+function filterByDropdown(keyword) {
+    filterGImgs(keyword);
 
 }
