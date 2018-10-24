@@ -24,7 +24,7 @@ function createImg(url, ...keywords) {
 }
 
 function getImgById(imgId) {
-    var findImg = gImgs.find(function (img) {
+    var findImg = gImgs.find(img=>{
         return imgId === img.id
     })
     return findImg;
@@ -37,9 +37,9 @@ function getImgs() {
 }
 
 function filterImg(searchWord) {
-    var filteredImg = gImgs.filter(function (img) {
+    var filteredImg = gImgs.filter(img => {
         var keywords = img.keywords
-        return keywords.some(function (word) {
+        return keywords.some(word => {
             return (word.includes(searchWord))
         })
     })
@@ -48,3 +48,7 @@ function filterImg(searchWord) {
     renderGallery()
 }
 
+function filterByWord(keyword){
+    filterImg(keyword);
+
+}
