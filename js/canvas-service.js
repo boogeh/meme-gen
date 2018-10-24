@@ -3,6 +3,21 @@
 var gCanvas;
 var gCtx;
 var gSettings;
+var gText = [
+    {
+        id: line1,
+        txt: '',
+        x: 70,
+        y: 70,
+    },
+    {
+        id: line2,
+        txt: '',
+        x: 70,
+        y: (gCanvas.height - 50),
+    },
+
+]
 
 
 function setCanvas() {
@@ -41,7 +56,7 @@ function draw() {
     gCtx.strokeStyle = gSettings.strokeColor;
     gCtx.fillStyle = gSettings.fillColor;
     gCtx.lineWidth = 5;
-    gCtx.strokeText(gSettings.line1, 70, 70);
+    gCtx.strokeText(gText[0].txt, 70, 70);
     gCtx.fillText(gSettings.line1, 70, 70);
     gCtx.strokeText(gSettings.line2, 70, gCanvas.height - 50);
     gCtx.fillText(gSettings.line2, 70, gCanvas.height - 50);
