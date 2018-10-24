@@ -38,7 +38,6 @@
                 <canvas id="main-canvas"></canvas>
             </div>
 
-<<<<<<< HEAD
             <div class="canvas-controllers flex column">
                 <div class="buttons flex row">
                     Fill Color:
@@ -48,24 +47,11 @@
                     <button class="font-plus" onclick="fontPlus()">+</button>
                     <div class="dontLine">Font Size:<span class="fontSize"></span></div>
                     <button class="font-minus" onclick="fontMinus()">-</button>
+                    <button class="btn "> <a class=" btn-save" onclick="downloadCanvas(this)">save</a></button>
                 </div>
                 <div class="input-lines flex column">
                     <input type="text" placeholder="Add line 1" id="line1" onkeyup="onSetText(this)">
                     <input type="text" placeholder="Add line 2" id="line2" onkeyup="onSetText(this)">
-=======
-            <div class="canvas-controllers">
-                <div class="buttons ">
-                    <input type="color" class="colorPick">
-                    <div class="dontLine">Font Size:<span class="fontSize"></span></div>
-                    <button class="font-plus" onclick="fontPlus()">+</button>
-                    <button class="font-minus" onclick="fontMinus">-</button>
-                    <button class="btn "> <a class=" btn-save" onclick="downloadCanvas(this)">save</a></button>
-                    <!-- <button class="btn btn-clear" onclick="drawImage()">clear</button> -->
-                </div>
-                <div class="input-lines">
-                    <input type="text" placeholder="Add line 1" id="text-line1" onkeydown="onChangeText(this.value)">
-                    <input type="text" placeholder="Add line 2" id="text-line2">
->>>>>>> 8dc874b2ca462ffc49ad67acaacf1b73d9a57582
                 </div>
             </div>
         </section>

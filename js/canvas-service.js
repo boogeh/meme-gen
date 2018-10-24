@@ -59,7 +59,6 @@ function setFontSize() {
 }
 
 function fontMinus() {
-<<<<<<< HEAD
     gSettings.fontSize -= 2;
     draw();
 }
@@ -91,21 +90,9 @@ function clearSettings() {
         font: 'Arial'
     }
 }
-=======
-    console.log('minus hit');
-    gSettings.fontSize--;
-    // document.querySelector('.fontSize').innerText = gSettings.fontSize
-}
-
-function fontPlus() {
-    console.log('minus hit');
-    gSettings.fontSize++;
-    // document.querySelector('.fontSize').innerText = gSettings.fontSize
-}
 
 function downloadCanvas(elLink) {
     console.log(gCanvas.toDataURL())
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'mem.jpg'
 }
->>>>>>> 8dc874b2ca462ffc49ad67acaacf1b73d9a57582
