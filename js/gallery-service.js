@@ -54,13 +54,8 @@ function getImgById(imgId) {
 }
 
 function getImgs() {
-<<<<<<< HEAD
-    if(gFilteredImg) return gFilteredImg
-    else return gImgs
-=======
     if (gFilteredImg) return gFilteredImg;
     else return gImgs;
->>>>>>> 92c6386725abda1a7904d52e6815c7c53c1b8c25
 }
 
 function filterGImgs(keyword) {

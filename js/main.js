@@ -44,16 +44,9 @@ function onSetStrokeColor(elColor) {
 function clearInputs() {
     document.querySelector('.fill-color').value = ''   
     document.querySelector('.stroke-color').value = ''   
-<<<<<<< HEAD
     document.querySelector('#line1').value = ''   
     document.querySelector('#line2').value = ''
     document.querySelector('.shadow-checkbox').checked = false;
     resetSettings()
 }
 
-=======
-    document.querySelector('.line1').value = ''   
-    document.querySelector('.line2').value = ''
-    clearSettings()
-}
->>>>>>> 92c6386725abda1a7904d52e6815c7c53c1b8c25
