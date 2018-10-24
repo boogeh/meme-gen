@@ -44,7 +44,7 @@ function onSetStrokeColor(elColor) {
 function clearInputs() {
     document.querySelector('.fill-color').value = ''   
     document.querySelector('.stroke-color').value = ''   
-    document.querySelector('#line1').value = ''   
-    document.querySelector('#line2').value = ''
+    document.querySelector('.line1').value = ''   
+    document.querySelector('.line2').value = ''
     clearSettings()
 }

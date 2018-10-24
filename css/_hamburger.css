@@ -1,6 +1,5 @@
 .spinner-master {
     position: relative;
-    /* margin: 50px auto; */
     margin: 10px;
     height: 40px;
     width: 40px;
@@ -18,7 +17,7 @@
     z-index: 2;
     height: 100%;
     width: 100%;
-    top: 10px;
+    top: 20px;
     left: 0;
   }
   .spinner-master .spinner1,

@@ -12,8 +12,15 @@ img{
     object-fit: cover;
 }
 
+.filterBox{
+    height: 50px;
+    background-color: var(--mid);
+    align-items: center;
+    margin-bottom: 15px
+}
 .filterImg{
-    margin: 5px 10px;
+    background-color: var(--light);
+    margin-right: 10px;
     border-radius: 50px;
     padding: 5px 10px;
 }

@@ -15,7 +15,7 @@ var gSettings = {
 
 function setCanvas() {
     var elCanvasDiv = document.querySelector('.canvas-wrapper')
-    gCanvas = document.querySelector('#main-canvas')
+    gCanvas = document.querySelector('.main-canvas')
     gCanvas.width = elCanvasDiv.clientWidth; // canvas width same as img width
     gCtx = gCanvas.getContext('2d')
     setFontSize()
