@@ -3,7 +3,6 @@
 function init() {
     renderGallery();
     clearInputs();
-    // setCanvas();
 }
 
 function renderGallery() {
