@@ -19,7 +19,7 @@
     color: var(--light);
     background-color: var(--mid);
 }
-.colorPick{
+.color-pick{
     border: none;
     background-color: white;
     width: 30px;

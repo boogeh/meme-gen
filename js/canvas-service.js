@@ -10,7 +10,6 @@ var gSettings = {
     strokeColor: '#000000',
     fillColor: '#ffffff',
     font: 'Arial'
-
 }
 
 
@@ -19,15 +18,14 @@ function setCanvas() {
     gCanvas = document.querySelector('#main-canvas')
     gCanvas.width = elCanvasDiv.clientWidth; // canvas width same as img width
     gCtx = gCanvas.getContext('2d')
+    setFontSize()
 }
 
 function drawImage(elImg) {
-    console.log(elImg)
     var ratio = elImg.naturalWidth / elImg.naturalHeight;
     gCanvas.height = gCanvas.width / ratio;
     gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight,
         0, 0, gCanvas.width, gCanvas.height);
-    setFontSize()
     gSettings.elImg = elImg
 }
 
@@ -36,34 +34,59 @@ function backToGallery() {
     document.querySelector('.gallery-container').classList.remove('hide');
 }
 
-function changeText(text) {
+
+function setText(elText) {
+    var textLineId = elText['id'];
+    var textLine = elText['value'];
+    gSettings[textLineId] = textLine
+    draw()
+}
+function draw() {
     var elImg = gSettings.elImg
     drawImage(elImg)
-    gSettings.line1 = text
-    gCtx.font = gSettings.fontSize + 'px ' + gSettings.font
-    gCtx.strokeStyle = gSettings.strokeColor
-    gCtx.fillStyle = gSettings.fillColor
-    gCtx.lineWidth = 7
-    gCtx.strokeText(`${text}`, 70, 70)
-    gCtx.fillText(`${text}`, 70, 70)
+    gCtx.font = gSettings.fontSize + 'px ' + gSettings.font;
+    gCtx.strokeStyle = gSettings.strokeColor;
+    gCtx.fillStyle = gSettings.fillColor;
+    gCtx.lineWidth = 5;
+    gCtx.strokeText(gSettings.line1, 70, 70);
+    gCtx.fillText(gSettings.line1, 70, 70);
+    gCtx.strokeText(gSettings.line2, 70, gCanvas.height - 50);
+    gCtx.fillText(gSettings.line2, 70, gCanvas.height - 50);
 }
 
 function setFontSize() {
-    gSettings.fontSize = Math.round(gCanvas.height / 10)
+    gSettings.fontSize = Math.round(gCanvas.width / 15);
 }
 
-function fontMinus(bookId) {
-    console.log('minus hit');
-    gSettings.fontSize--;
-    // document.querySelector('.fontSize').innerText = gSettings.fontSize
+function fontMinus() {
+    gSettings.fontSize -= 2;
+    draw();
 }
 
-function fontPlus(bookId) {
-    console.log('minus hit');
-    gSettings.fontSize++;
-    // document.querySelector('.fontSize').innerText = gSettings.fontSize
+function fontPlus() {
+    gSettings.fontSize += 2;
+    draw();
 }
 
-// function getElImg(elImg) {
-//     gSettings.elImg = elImg
-// }
+function setFillColor(elColor) {
+    gSettings.fillColor = elColor;
+    draw();
+}
+
+function setStrokeColor(elColor) {
+    gSettings.strokeColor = elColor;
+    draw();
+}
+
+
+function clearSettings() {
+    gSettings = {
+        elImg: '',
+        line1: '',
+        line2: '',
+        fontSize: '',
+        strokeColor: '#000000',
+        fillColor: '#ffffff',
+        font: 'Arial'
+    }
+}

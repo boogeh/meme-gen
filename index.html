@@ -35,18 +35,20 @@
             <div class="canvas-wrapper">
                 <canvas id="main-canvas"></canvas>
             </div>
-         
+
             <div class="canvas-controllers flex column">
                 <div class="buttons flex row">
-                    <input type="color" class="colorPick">
-                    <!-- <input type="color" class="colorPick" value="white"> -->
+                    Fill Color:
+                    <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
+                    Stroke Color:
+                    <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
                     <button class="font-plus" onclick="fontPlus()">+</button>
                     <div class="dontLine">Font Size:<span class="fontSize"></span></div>
-                    <button class="font-minus" onclick="fontMinus">-</button>
+                    <button class="font-minus" onclick="fontMinus()">-</button>
                 </div>
                 <div class="input-lines flex column">
-                    <input type="text" placeholder="Add line 1" id="text-line1" onkeydown="onChangeText(this.value)">
-                    <input type="text" placeholder="Add line 2" id="text-line2">
+                    <input type="text" placeholder="Add line 1" id="line1" onkeyup="onSetText(this)">
+                    <input type="text" placeholder="Add line 2" id="line2" onkeyup="onSetText(this)">
                 </div>
             </div>
         </section>
