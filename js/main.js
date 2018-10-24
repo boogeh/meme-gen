@@ -46,5 +46,7 @@ function clearInputs() {
     document.querySelector('.stroke-color').value = ''   
     document.querySelector('#line1').value = ''   
     document.querySelector('#line2').value = ''
-    clearSettings()
+    document.querySelector('.shadow-checkbox').checked = false;
+    resetSettings()
 }
+

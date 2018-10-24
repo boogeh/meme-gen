@@ -2,15 +2,7 @@
 
 var gCanvas;
 var gCtx;
-var gSettings = {
-    elImg: '',
-    line1: '',
-    line2: '',
-    fontSize: '',
-    strokeColor: '#000000',
-    fillColor: '#ffffff',
-    font: 'Arial'
-}
+var gSettings;
 
 
 function setCanvas() {
@@ -18,7 +10,8 @@ function setCanvas() {
     gCanvas = document.querySelector('#main-canvas')
     gCanvas.width = elCanvasDiv.clientWidth; // canvas width same as img width
     gCtx = gCanvas.getContext('2d')
-    setFontSize()
+    resetSettings();
+    setFontSize();
 }
 
 function drawImage(elImg) {
@@ -79,7 +72,7 @@ function setStrokeColor(elColor) {
 }
 
 
-function clearSettings() {
+function resetSettings() {
     gSettings = {
         elImg: '',
         line1: '',
@@ -87,7 +80,8 @@ function clearSettings() {
         fontSize: '',
         strokeColor: '#000000',
         fillColor: '#ffffff',
-        font: 'Arial'
+        shadow: false,
+        font: 'Arial',
     }
 }
 
