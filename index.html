@@ -58,11 +58,21 @@
                         <div class="dontLine">Font Size<span class="fontSize"></span></div>
                         <button class="font-plus" onclick="fontPlus()">+</button>
                         <button class="font-minus" onclick="fontMinus()">-</button>
-                        Shadow
-                        <input type="checkbox" class="shadow-checkbox">
+                        
                     </div>
+                </div>
+                <div class="buttons flex row">
+                    <div class="shadow-container">Shadow</div>
+                    <input type="checkbox" class="shadow-checkbox">
+
+                    <select class="drop-down img=filter" onchange="filterByDropdown(this.value)">
+                        <option selected="selected" value="impact">Impact</option>
+                        <option value="arial">Arial</option>
+                        <option value="arial">Font</option>
+                     
                     <button class="btn "> <a class=" btn-save" onclick="downloadCanvas(this)">save</a></button>
                 </div>
+
                 <div class="input-lines flex column">
                     <input type="text" placeholder="Add line 1" class="input-line" id="line1" onkeyup="onSetText(this)">
                     <input type="text" placeholder="Add line 2" class="input-line" id="line2" onkeyup="onSetText(this)">
