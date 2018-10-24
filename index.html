@@ -30,10 +30,7 @@
                 <input type="text" class="filterImg" oninput="filterGImgs(this.value)" placeholder="Filter By Keywords">
                 <select class="drop-down img=filter" onchange="filterByDropdown(this.value)">
                     <option selected="selected" value="all">All</option>
-                    <option value="funny">Funny</option>
-                    <option value="baby">Babies</option>
-                    <option value="politics">Politics</option>
-                    <option value="animal">Animals</option>
+                    <span class="option-filler"></span>
                 </select>
             </div>
             <div class="gallery"></div>
@@ -41,7 +38,7 @@
         <section class="canvas-container hide">
             <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">➜</span> Back To Gallery</button>
             <div class="canvas-wrapper">
-                <canvas class="main-canvas"></canvas>
+                <canvas class="main-canvas" onclick="canvasClicked(event)"></canvas>
             </div>
 
             <div class="canvas-controllers flex column">
@@ -58,11 +55,21 @@
                         <div class="fontLine">Font Size<span class="fontSize"></span></div>
                         <button class="font-plus" onclick="fontPlus()">+</button>
                         <button class="font-minus" onclick="fontMinus()">-</button>
-                        Shadow
-                        <input type="checkbox" class="shadow-checkbox">
+                        
                     </div>
+                </div>
+                <div class="buttons flex row">
+                    <div class="shadow-container">Shadow</div>
+                    <input type="checkbox" class="shadow-checkbox">
+
+                    <select class="drop-down img=filter" onchange="filterByDropdown(this.value)">
+                        <option selected="selected" value="impact">Impact</option>
+                        <option value="arial">Arial</option>
+                        <option value="arial">Font</option>
+                     
                     <button class="btn "> <a class=" btn-save" onclick="downloadCanvas(this)">save</a></button>
                 </div>
+
                 <div class="input-lines flex column">
                     <input type="text" placeholder="Add line 1" class="input-line" id="line1" onkeyup="onSetText(this)">
                     <button class="move-up move-up-line1 line1" onclick="onMoveUp(this)">Up</button>
