@@ -55,7 +55,7 @@
                         <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
                     </div>
                     <div class="font-input flex row">
-                        <div class="dontLine">Font Size<span class="fontSize"></span></div>
+                        <div class="fontLine">Font Size<span class="fontSize"></span></div>
                         <button class="font-plus" onclick="fontPlus()">+</button>
                         <button class="font-minus" onclick="fontMinus()">-</button>
                         Shadow
@@ -65,7 +65,10 @@
                 </div>
                 <div class="input-lines flex column">
                     <input type="text" placeholder="Add line 1" class="input-line" id="line1" onkeyup="onSetText(this)">
-                    <input type="text" placeholder="Add line 2" class="input-line" id="line2" onkeyup="onSetText(this)">
+                    <button class="move-up move-up-line1 line1" onclick="onMoveUp(this)">Up</button>
+                    <button class="move-down move-down-line1 line1" onclick="onMoveDown(this)">Down</button>
+                    <button class="move-left move-left-line1 line1" onclick="onMoveLeft(this)">Left</button>
+                    <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">Right</button>
                 </div>
             </div>
         </section>

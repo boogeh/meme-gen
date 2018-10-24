@@ -44,8 +44,24 @@ function clearInputs() {
     document.querySelector('.fill-color').value = ''   
     document.querySelector('.stroke-color').value = ''   
     document.querySelector('#line1').value = ''   
-    document.querySelector('#line2').value = ''
+    // document.querySelector('#line2').value = ''
     document.querySelector('.shadow-checkbox').checked = false;
     resetSettings()
+}
+
+function onMoveUp(elBtn) {
+    moveUp(elBtn)
+}
+
+function onMoveDown(elBtn) {
+    moveDown(elBtn)
+}
+
+function onMoveLeft(elBtn) {
+    moveLeft(elBtn)
+}
+
+function onMoveRight(elBtn) {
+    moveRight(elBtn)
 }
 

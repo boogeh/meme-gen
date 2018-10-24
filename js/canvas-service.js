@@ -3,21 +3,36 @@
 var gCanvas;
 var gCtx;
 var gSettings;
-var gText = [
-    {
-        id: line1,
+var gText = 
+{ line1: {
+        id: 'line1',
         txt: '',
         x: 70,
         y: 70,
     },
-    {
-        id: line2,
+    line2: {
+        id: 'line2',
         txt: '',
         x: 70,
-        y: (gCanvas.height - 50),
+        y: 400,
     },
+}
 
-]
+var gMeme = {
+    selectedElImg: null, // TODO
+    txts: [
+        {
+            line: '',
+            size: '',
+            align: '',
+            colorFill: '',
+            colorStroke: '',
+            font: '',
+            x: '',
+            y: '',
+        },
+    ]
+}
 
 
 function setCanvas() {
@@ -34,7 +49,7 @@ function drawImage(elImg) {
     gCanvas.height = gCanvas.width / ratio;
     gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight,
         0, 0, gCanvas.width, gCanvas.height);
-    gSettings.elImg = elImg
+    gMeme.selectedElImg = elImg
 }
 
 function backToGallery() {
@@ -46,7 +61,7 @@ function backToGallery() {
 function setText(elText) {
     var textLineId = elText['id'];
     var textLine = elText['value'];
-    gSettings[textLineId] = textLine
+    gText[textLineId].txt = textLine
     draw()
 }
 function draw() {
@@ -56,10 +71,8 @@ function draw() {
     gCtx.strokeStyle = gSettings.strokeColor;
     gCtx.fillStyle = gSettings.fillColor;
     gCtx.lineWidth = 5;
-    gCtx.strokeText(gText[0].txt, 70, 70);
-    gCtx.fillText(gSettings.line1, 70, 70);
-    gCtx.strokeText(gSettings.line2, 70, gCanvas.height - 50);
-    gCtx.fillText(gSettings.line2, 70, gCanvas.height - 50);
+    gCtx.strokeText(gText.line1.txt, gText.line1.x, gText.line1.y);
+    gCtx.fillText(gText.line1.txt, gText.line1.x, gText.line1.y);
 }
 
 function setFontSize() {
@@ -104,4 +117,17 @@ function downloadCanvas(elLink) {
     console.log(gCanvas.toDataURL())
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'mem.jpg'
+}
+
+function moveUp(elBtn){
+    
+}
+function moveDown(elBtn) {
+    console.log(elBtn)
+}
+function moveLeft(elBtn) {
+    console.log(elBtn)
+}
+function moveRight(elBtn) {
+    console.log(elBtn)
 }
