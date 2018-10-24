@@ -2,7 +2,7 @@
 
 function init() {
     renderGallery()
-    setCanvas()
+    // setCanvas()
 }
 
 function renderGallery() {

@@ -52,18 +52,20 @@ function setFontSize() {
     gSettings.fontSize = Math.round(gCanvas.height / 10)
 }
 
-function fontMinus(bookId) {
+function fontMinus() {
     console.log('minus hit');
     gSettings.fontSize--;
     // document.querySelector('.fontSize').innerText = gSettings.fontSize
 }
 
-function fontPlus(bookId) {
+function fontPlus() {
     console.log('minus hit');
     gSettings.fontSize++;
     // document.querySelector('.fontSize').innerText = gSettings.fontSize
 }
 
-// function getElImg(elImg) {
-//     gSettings.elImg = elImg
-// }
+function downloadCanvas(elLink) {
+    console.log(gCanvas.toDataURL())
+    elLink.href = gCanvas.toDataURL()
+    elLink.download = 'mem.jpg'
+}

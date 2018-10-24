@@ -1,8 +1,10 @@
 'use strict'
 
+
 const IMG_COUNT = 25
 var gId = 1
-var gImgs = createImgs()
+var gFilteredImg;
+// var gImgs = createImgs()
 
 function createImgs() {
     var imgs = []
@@ -29,5 +31,20 @@ function getImgById(imgId) {
 }
 
 function getImgs() {
+    if(gFilteredImg) return gFilteredImg
+    else
     return gImgs
 }
+
+function filterImg(searchWord) {
+    var filteredImg = gImgs.filter(function (img) {
+        var keywords = img.keywords
+        return keywords.some(function (word) {
+            return (word.includes(searchWord))
+        })
+    })
+    console.log('filtered: ', filteredImg);
+    gFilteredImg = filteredImg;
+    renderGallery()
+}
+
