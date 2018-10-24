@@ -1,0 +1,12 @@
+.gallery{
+    max-width: 100%;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill , minmax(100px, 1fr));
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

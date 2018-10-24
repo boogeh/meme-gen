@@ -44,12 +44,24 @@ function changeText(text) {
     gCtx.strokeStyle = gSettings.strokeColor
     gCtx.fillStyle = gSettings.fillColor
     gCtx.lineWidth = 7
-    gCtx.strokeText(`${text}`, 70,70)
-    gCtx.fillText(`${text}`, 70,70)
+    gCtx.strokeText(`${text}`, 70, 70)
+    gCtx.fillText(`${text}`, 70, 70)
 }
 
 function setFontSize() {
-     gSettings.fontSize = gCanvas.height / 10
+    gSettings.fontSize = Math.round(gCanvas.height / 10)
+}
+
+function fontMinus(bookId) {
+    console.log('minus hit');
+    gSettings.fontSize--;
+    // document.querySelector('.fontSize').innerText = gSettings.fontSize
+}
+
+function fontPlus(bookId) {
+    console.log('minus hit');
+    gSettings.fontSize++;
+    // document.querySelector('.fontSize').innerText = gSettings.fontSize
 }
 
 // function getElImg(elImg) {

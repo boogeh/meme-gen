@@ -31,7 +31,7 @@
         </section>
         <section class="canvas-container hide">
             <!-- TODO: move height and width to the JS -->
-            <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">◀</span> Back To Gallery</button>
+            <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">➜</span> Back To Gallery</button>
             <div class="canvas-wrapper">
                 <canvas id="main-canvas"></canvas>
             </div>
@@ -40,9 +40,9 @@
                 <div class="buttons flex row">
                     <input type="color" class="colorPick">
                     <!-- <input type="color" class="colorPick" value="white"> -->
-                    <button class="font-plus">+</button>
+                    <button class="font-plus" onclick="fontPlus()">+</button>
                     <div class="dontLine">Font Size:<span class="fontSize"></span></div>
-                    <button class="font-minus">-</button>
+                    <button class="font-minus" onclick="fontMinus">-</button>
                 </div>
                 <div class="input-lines flex column">
                     <input type="text" placeholder="Add line 1" id="text-line1" onkeydown="onChangeText(this.value)">
