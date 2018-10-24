@@ -3,6 +3,7 @@
 function init() {
     renderGallery();
     clearInputs();
+    sortPopularWords();
 }
 
 function renderGallery() {

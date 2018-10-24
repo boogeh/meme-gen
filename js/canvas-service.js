@@ -1,5 +1,5 @@
 'use strict'
-
+var gPopularWords;
 var gCanvas;
 var gCtx;
 var gSettings;
@@ -99,5 +99,74 @@ function downloadCanvas(elLink) {
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'mem.jpg'
 }
+renderPopularKeywords();
 
+function renderPopularKeywords() {
+    var elSearchWord = document.querySelectorAll('.option-filler')
+    console.log(elSearchWord);
+    var options = []
+    for (let i = 0; i < elSearchWord.length; i++) {
+        options.push(`
+        <option  value="${gPopularWords[i]}">${gPopularWords[i]}</option>
+        `)
+        elSearchWord.innerHtml(' ');
+        console.log(elSearchWord);
+
+    }
+
+}
+function mapByKeywords() {
+    var popularWords = {};
+    gImgs.forEach(img => {
+        img.keywords.forEach(keyword => {
+            if (!popularWords[keyword]) popularWords[keyword] = 1;
+            else popularWords[keyword]++;
+        })
+    })
+    return popularWords
+}
+
+function sortPopularWords() {
+    var mapByPopular = mapByKeywords();
+    var sortedPopular = [];
+    for (var apearance in mapByPopular) {
+        sortedPopular.push([apearance, mapByPopular[apearance]]);
+    }
+
+    sortedPopular.sort(function (b, a) {
+        return a[1] - b[1];
+    });
+    gPopularWords = sortedPopular;
+
+}
+
+function drawCharts() {
+    gStars.forEach((star, idx) => {
+        gCtx.fillStyle = 'black';
+        star.x = idx * (barWidth + 10);
+        star.y = gCanvas.height - star.rate * heightFactor;
+        gCtx.fillRect(star.x, star.y, barWidth, star.rate * heightFactor);
+    });
+}
+
+function canvasClicked(ev) {
+    var elModal = document.querySelector('.modal')
+
+    var textLine = gMeme.txts.find(function (textLine) {
+        return (
+            ev.clientX > textLine.x &&
+            ev.clientX < textLine.x + 100 &&
+            ev.clientY > textLine.y &&
+            ev.clientY < textLine.y + textLine.size
+        )
+    })
+    if (textLine) {
+        elModal.style.display = 'block'
+        elModal.innerText = 'Name: ' + textLine.name + ' Rate: ' + textLine.rate
+        elModal.style.top = ev.clientY + 'px'
+        elModal.style.left = ev.clientX + 'px'
+    } else {
+        elModal.style.display = 'none'
+    }
+}
 
