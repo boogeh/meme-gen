@@ -54,3 +54,6 @@
 .start{
     justify-content: start;
 }
+.around{
+    justify-content: space-around;
+}

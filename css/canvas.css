@@ -12,10 +12,7 @@
 }
 .roboto{
     font-family: 'Roboto', sans-serif;
-
 }
-
-
 
 .canvas-container{
     width: 100%;
@@ -29,56 +26,63 @@
 }
 .canvas-controllers{
     max-width: 100%;
-    /* padding-left: 15px; */
-    /* padding-right: 15px; */
-}
 
+}
 
 .btn-closeEditor{
     border: none;
     font-size: 1.5rem;
     width: 100%;
-    height: 40px;
+    height: 50px;
     color: var(--light);
     background-color: var(--mid);
 }
+
+.btn-closeEditor:hover{
+    background-color: var(--midB);
+}
+
 .color-pick{
     border: none;
     background-color:white;
-    width: 1.8rem;
+    width: 2.2rem;
     height: 1.8rem;
     padding: 0;
     margin: 0;
+    transition: 0.3s;
+}
+.color-pick:hover{
+    cursor: pointer;
 }
 .arrow{
     margin-right: 60px;
     transform: rotate(45deg);
 }
 
-
 .main-canvas{
     margin-bottom: 5px;
+    cursor: pointer;
 }
 .input-box{
-    /* width: 100%; */
     color: var(--dark);
     margin-bottom: 5px;
-    /* margin-right: 10px; */
-
     justify-content: baseline;
-    
-}
-.input-line{
 
-    width: 80%
 }
+
+.input-line{
+    width: 82%;
+}
+
 .delete-text{
     margin-left: 12px;
     padding: 5px;
     font-size: 1.2rem;
 }
+
 .delete-text:hover{
     cursor: pointer;
+    background-color: var(--superLight);
 }
 
 .add-line{
@@ -86,80 +90,91 @@
     padding: 5px;
     font-size: 1.2rem;
 }
+
 .add-line:hover{
     cursor: pointer;
+    background-color: var(--superLight);
 }
 
 .font-minus{
-    /* margin-left: 12px; */
     margin-top: 4px;
     padding: 5px;
     font-size: 1.2rem;
+    transition: 0.3s;
 }
+
 .font-minus:hover{
     cursor: pointer;
+    background-color: var(--superLight);
 }
 
 .font-plus{
-
     margin-left: 8px;
-    /* margin-right: 8px; */
     margin-top: 4px;
     padding: 5px;
     font-size: 1.2rem;
+    transition: 0.3s;
+
 }
+
 .font-plus:hover{
     cursor: pointer;
+    background-color: var(--superLight);
 }
+
 .font-input{
     width:48%;
     color: var(--dark);
-    border: 1px solid lightgray;
+    border: 1px solid var(--superLight);
     margin-bottom: 5px;
-
-    /* border-radius: 5px; */
     margin-right: 4%;
     padding-right: 8px;
     padding-left: 8px;
-    
+ 
 }
 
 .fontLine{
-    margin:auto;
-    
+    margin:auto; 
 }
 
 .color-input{
     text-align: center;
     width: 48%;
     color: var(--dark);
-    border: 1px solid lightgray;
+    border: 1px solid var(--superLight);
     margin-bottom: 5px;
     padding-right: 8px;
     padding-left: 8px;
-
 }
 
 .buttons{
     width:100%;
     height: 40px;
     margin-bottom: 5px;
-
 }
+
 .font-picker{
     width: 48%;
     height: 39px;
+    padding-left: 15%;
     margin-right: 4%;
-    border: 1px solid lightgray;
+    border: 1px solid var(--superLight);
     background:none;
-    margin-bottom: 5px;
+    transition: 0.3s;
 }
+
+.font-picker:hover{
+    cursor: pointer;
+    background-color: var(--superLight);
+}
+
 .move-btns{
     width: 48%;
     text-align: center;
     margin-bottom: 5px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--superLight);
 }
+
 .move-btn{
     height: 39px;
     color: var(--dark);
@@ -168,28 +183,42 @@
     outline: none;
     border: none;
     color: var(--dark);
+    transition: 0.3s;
+
 }
+
 .move-btn:hover{
     cursor: pointer;
+    background-color: var(--superLight);
     
 }
-.shadow-container{
-    width: 48%;
-    margin-right: 4%;
 
-    border: 1px solid lightgray;
+.shadow-container{
+    text-transform: uppercase;
+    width: 48%;
+    padding-top: 8px;
+    height: 39px;
+    margin-right: 4%;
+    text-align: center;
+    border: 1px solid var(--superLight);
     color: var(--dark);
+    transition: 0.3s;
+
 }
+
 .shadow-container:hover{
+    background-color: var(--superLight);
     cursor: pointer;
 }
-.shadow-container:focus{
-    background-color: var(--dark);
+
+.shadow-checkbox.checked{
+    font-weight: bold; 
 }
 
 .btn-save{
-    border: 1px solid lightgray;
+    border: 1px solid var(--superLight);
     height: 39px;
+    padding-top: 8px;
     text-transform: uppercase;
     color: var(--dark);
     width: 48%;
@@ -198,8 +227,20 @@
 
 .btn-save:hover{
     cursor: pointer;
+    background-color: var(--superLight);
 }
 
+.download-btn{
+    position: relative;
+    top: 0;
+    left: 0;
+    color: var(--dark);
+    background: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: 0.3s;
+}
 
 
 
@@ -207,20 +248,16 @@
 
         
 @media( min-width:680px){
-.canvas-wrapper { grid-area: canvas-wrapper; }
-.btn-closeEditor { grid-area: btn-closeEditor; }
-.canvas-controllersr { grid-area: canvas-controllersr; }
 
-    .canvas-container{ 
-        display: grid;
-        grid-template-areas:
-        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper btn-closeEditor btn-closeEditor'
-        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper canvas-controllers canvas-controllers'
-        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper canvas-controllersr canvas-controllers'
-        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper canvas-controllers canvas-controllersr';
 
-    
-    }
+.canvas-wrapper{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.canvas-controllers{
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .font-charmonman {
@@ -241,4 +278,5 @@
 }
 .font-chakra {
     font-family: 'Chakra Petch'
+}
 }

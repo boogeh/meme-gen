@@ -1,4 +1,5 @@
 @import "header.css";
+@import "footer.css";
 @import "gallery.css";
 @import "canvas.css";
 @import "helpers.css";
@@ -18,8 +19,10 @@
 :root {
     --dark: #59606d;
     --mid: #70acb1;
+    --midB: #659ea3;
     --light: #c6f1e7;
     --boom: #ff7c38;
+    --superLight: lightgray;
   }
 
 

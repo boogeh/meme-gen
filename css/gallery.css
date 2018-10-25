@@ -6,10 +6,13 @@
 }
 
 img{
-    
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+img:hover{
+    cursor: pointer;
 }
 
 .filterBox{
@@ -20,6 +23,7 @@ img{
     align-items: center;
     margin-bottom: 15px
 }
+
 .filterImg{
     background-color: var(--light);
     outline: none;
@@ -29,6 +33,7 @@ img{
     border-radius: 50px;
     padding: 5px 10px;
 }
+
 select{
     -webkit-appearance: none;
     font-family: 'Roboto', sans-serif;
@@ -41,6 +46,7 @@ select{
     font-size: 1rem;
     text-transform: uppercase;
 }
+
 option{
     padding: 5px;
     text-transform: uppercase;
