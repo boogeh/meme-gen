@@ -13,7 +13,11 @@
 </head>
 
 <body onload="init()">
-    <div class="screen" onclick="toggleMenu()"></div>
+
+
+
+
+
     <section class="header-container">
 
         <div class="header-content container flex">
@@ -21,7 +25,7 @@
             <div class="nav top-nav flex align-center space-between">
                 <div class="logo top-nav-logo" alt="Meme Generator">Meme Generator</div>
                 <nav class="main-nav ">
-                    <a href="#">Gallery</a>
+                    <a href="index.html">Gallery</a>
                     <a href="#">About</a>
                     <a href="#">Contact</a>
                 </nav>
@@ -31,7 +35,17 @@
         </div>
     </section>
 
+    <div class="screen" onclick="toggleMenu()"></div>
+
+    <div class="about-page hide">
+        <div class="about-text-wrapper">
+            <p> This page was built by Amit and Elad</p>
+            <p> Hope you'll enjoy!</p>
+        </div>
+    </div>
+
     <main class="container main-container">
+
         <section class="gallery-container">
             <div class="filterBox flex">
                 <input type="text" class="filterImg" oninput="filterGImgs(this.value)" placeholder="Filter By Keywords">
@@ -43,8 +57,12 @@
 
 
         </section>
+
+
         <section class="canvas-container hide">
+
             <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">⬅</span> Back To Gallery</button>
+
             <div class="canvas-wrapper">
                 <canvas class="main-canvas" onclick="onCanvasClick(event)"></canvas>
             </div>
@@ -52,13 +70,20 @@
             <div class="canvas-controllers flex column space-between">
 
                 <div class="input-box flex row start">
-                    <input type="text" placeholder="Add line" class="input-line" id="line1" value="New line" onkeyup="onSetText(this)">
+                    <input type="text" placeholder="your text here" class="input-line" id="line1" value="New line"
+                        onkeyup="onSetText(this)">
                     <div class="delete-row"><i class="far fa-trash-alt"></i></div>
                     <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
                 </div>
 
 
                 <div class="buttons flex row start">
+                    <div class="font-input flex row start">
+                        <div class="fontLine">Font Size<span class="fontSize"></span></div>
+                        <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
+                        <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
+                    </div>
+                    
                     <div class="color-input">
                         Fill
                         <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
@@ -67,31 +92,26 @@
                         Stroke
                         <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
                     </div>
-                    <div class="font-input flex row start">
-                        <div class="fontLine">Font Size<span class="fontSize"></span></div>
-                        <button class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></button>
-                        <button class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></button>
-                    </div>
                 </div>
                 <div class="buttons flex row start">
-                    <button class="move-up move-up-line1 line1" onclick="onMoveUp(this)">▲</button>
-                    <button class="move-down move-down-line1 line1" onclick="onMoveDown(this)">▼</button>
-                    <button class="move-left move-left-line1 line1" onclick="onMoveLeft(this)">◀</button>
-                    <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">▶</button>
+                    <div class="move-btns">
+                        <button class="move-up move-up-line1 line1" onclick="onMoveUp(this)">▲</button>
+                        <button class="move-down move-down-line1 line1" onclick="onMoveDown(this)">▼</button>
+                        <button class="move-left move-left-line1 line1" onclick="onMoveLeft(this)">◀</button>
+                        <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">▶</button>
+                    </div>
                     <div class="shadow-container">Shadow</div>
+
                     <input type="checkbox" class="shadow-checkbox">
 
-                    <select class="drop-down font-picker" onchange="filterByDropdown(this.value)">
-                        <option selected="selected" value="impact">Impact</option>
-                        <option value="impact">Impact</option>
-                        <option value="coming">Coming-Soon</option>
-                        <option value="Chakra Petch">Chakra Petch</option> Chakra Petch
+              
+                    <div class="btn btn-save" onclick="downloadCanvas(this)">Download</div>
 
-                        <button class="btn "> <a class=" btn-save" onclick="downloadCanvas(this)">save</a></button>
                 </div>
 
             </div>
         </section>
+
     </main>
     <footer class="container"></footer>
 

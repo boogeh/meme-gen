@@ -54,29 +54,98 @@
     transform: rotate(45deg);
 }
 
-.buttons{
-    /* justify-content: space-between; */
-    /* align-items: baseline; */
-    margin-bottom: 15px;
 
-}
 .main-canvas{
     margin-bottom: 15px;
 }
 .input-box{
+    color: var(--dark);
     margin-bottom: 15px;
     /* margin-right: 10px; */
     justify-content: baseline;
     
 }
 .delete-row{
-    margin-right: 10px;
+    margin-left: 12px;
     padding: 5px;
     font-size: 1.2rem;
 }
+.delete-row:hover{
+    cursor: pointer;
+}
+
 .add-line{
-    margin-right: 10px;
+    margin-left: 12px;
     padding: 5px;
     font-size: 1.2rem;
+}
+.add-line:hover{
+    cursor: pointer;
+}
 
+.font-minus{
+    margin-left: 12px;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+.font-minus:hover{
+    cursor: pointer;
+}
+
+.font-plus{
+    margin-left: 8px;
+    margin-right: 8px;
+
+    padding: 5px;
+    font-size: 1.2rem;
+}
+.font-plus:hover{
+    cursor: pointer;
+}
+.font-input{
+    color: var(--dark);
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    margin-right: 15px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.fontLine{
+    margin:auto;
+    
+}
+
+.color-input{
+    color: var(--dark);
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    margin-right: 15px;
+    padding-right: 8px;
+    padding-left: 8px;
+
+}
+
+.buttons{
+    height: 40px;
+    margin-bottom: 15px;
+
+}
+
+
+        
+@media( min-width:680px){
+.canvas-wrapper { grid-area: canvas-wrapper; }
+.btn-closeEditor { grid-area: btn-closeEditor; }
+.canvas-controllersr { grid-area: canvas-controllersr; }
+
+    .canvas-container{ 
+        display: grid;
+        grid-template-areas:
+        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper btn-closeEditor btn-closeEditor'
+        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper canvas-controllers canvas-controllers'
+        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper canvas-controllersr canvas-controllers'
+        'canvas-wrapper canvas-wrapper canvas-wrapper canvas-wrapper canvas-controllers canvas-controllersr';
+
+    
+    }
 }
