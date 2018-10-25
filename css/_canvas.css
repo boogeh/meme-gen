@@ -21,11 +21,17 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 10px;
+
 }
 
 .canvas-wrapper {
     width: 100%
 }
+.canvas-controllers{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 
 .btn-closeEditor{
     border: none;
@@ -37,7 +43,7 @@
 }
 .color-pick{
     border: none;
-    background-color: var(--light);
+    background-color:white;
     width: 1.8rem;
     height: 1.8rem;
     padding: 0;
@@ -49,14 +55,28 @@
 }
 
 .buttons{
-    justify-content: space-between;
-    align-items: baseline;
+    /* justify-content: space-between; */
+    /* align-items: baseline; */
     margin-bottom: 15px;
 
 }
 .main-canvas{
     margin-bottom: 15px;
 }
-.input-line{
+.input-box{
     margin-bottom: 15px;
+    /* margin-right: 10px; */
+    justify-content: baseline;
+    
+}
+.delete-row{
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+.add-line{
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 1.2rem;
+
 }
