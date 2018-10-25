@@ -2,10 +2,8 @@
 
 function init() {
     renderGallery();
-    clearInputs();
-    // sortPopularWords();
-    // renderPopularKeywords();
-
+    sortPopularWords();
+    renderPopularKeywords();
 }
 
 function renderGallery() {
@@ -22,9 +20,15 @@ function renderGallery() {
 function onImgSelect(elImg) {
     document.querySelector('.canvas-container').classList.remove('hide');
     document.querySelector('.gallery-container').classList.add('hide');
-    clearInputs();
     setCanvas()
+    resetMeme()
+    renderInputs()
     drawImage(elImg);
+}
+
+function backToGallery() {
+    document.querySelector('.canvas-container').classList.add('hide');
+    document.querySelector('.gallery-container').classList.remove('hide');
 }
 
 function onBackBtn() {
@@ -41,26 +45,6 @@ function onSetFillColor(elColor) {
 
 function onSetStrokeColor(elColor) {
     setStrokeColor(elColor)
-}
-
-function clearInputs() {
-    document.querySelector('.fill-color').value = ''   
-    document.querySelector('.stroke-color').value = ''   
-    document.querySelector('#line1').value = ''   
-    // document.querySelector('#line2').value = ''
-    document.querySelector('.shadow-checkbox').checked = false;
-    // resetSettings()
-}
-
-function toggleMenu() {
-    var nav = document.querySelector('.main-nav');
-    nav.classList.toggle('open');
-    var screen = document.querySelector('.screen');
-    screen.classList.toggle('open')
-    var hamburger = document.querySelector('.hamburger')
-    if (hamburger.innerHTML === '<i class="fas fa-times"></i>')
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>'
-    else hamburger.innerHTML= '<i class="fas fa-times"></i>';
 }
 
 function onMoveUp() {
@@ -84,6 +68,26 @@ function onAddLine() {
     renderInputs()
 }
 
+function handleShadowChange(elBox) {
+    shadowChange(elBox)
+}
+
+function onCanvasClick(ev) {
+    canvasClick(ev)
+    renderInputs()
+}
+
+function toggleMenu() {
+    var nav = document.querySelector('.main-nav');
+    nav.classList.toggle('open');
+    var screen = document.querySelector('.screen');
+    screen.classList.toggle('open')
+    var hamburger = document.querySelector('.hamburger')
+    if (hamburger.innerHTML === '<i class="fas fa-times"></i>')
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>'
+    else hamburger.innerHTML= '<i class="fas fa-times"></i>';
+}
+
 function renderInputs() {
     var currText = getCurrText()
     document.querySelector('.fill-color').value = currText.fillColor;
@@ -93,18 +97,8 @@ function renderInputs() {
     document.querySelector('.font-picker').value = currText.font;
 }
 
-function onCanvasClick(ev) {
-    canvasClick(ev)
-    renderInputs()
-}
-
-
-
-
-
 
 function renderPopularKeywords() {
-
     var elSearchWord = document.querySelector('.dropdown-content')
     var keywords = [`<option selected="selected" value="all">All</option>`]
     for (let i = 0; i < 4; i++) {

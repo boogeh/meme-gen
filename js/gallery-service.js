@@ -73,10 +73,43 @@ function filterGImgs(keyword) {
 
 function filterByDropdown(keyword) {
     filterGImgs(keyword);
-
 }
 
 
 
+
+function mapByKeywords() {
+    var popularWords = {};
+    gImgs.forEach(img => {
+        img.keywords.forEach(keyword => {
+            if (!popularWords[keyword]) popularWords[keyword] = 1;
+            else popularWords[keyword]++;
+        })
+    })
+    return popularWords
+}
+
+function sortPopularWords() {
+    var mapByPopular = mapByKeywords();
+    var sortedPopular = [];
+    for (var apearance in mapByPopular) {
+        sortedPopular.push([apearance, mapByPopular[apearance]]);
+    }
+
+    sortedPopular.sort(function (b, a) {
+        return a[1] - b[1];
+    });
+    gPopularWords = sortedPopular;
+
+}
+
+// function drawCharts() {
+//     gStars.forEach((star, idx) => {
+//         gCtx.fillStyle = 'black';
+//         star.x = idx * (barWidth + 10);
+//         star.y = gCanvas.height - star.rate * heightFactor;
+//         gCtx.fillRect(star.x, star.y, barWidth, star.rate * heightFactor);
+//     });
+// }
 
 

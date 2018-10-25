@@ -40,8 +40,6 @@
                 </select>
             </div>
             <div class="gallery"></div>
-
-
         </section>
         <section class="canvas-container hide">
             <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">⬅</span> Back To Gallery</button>
@@ -79,7 +77,7 @@
                     <button class="move-left move-left-line1 line1" onclick="onMoveLeft(this)">◀</button>
                     <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">▶</button>
                     <div class="shadow-container">Shadow</div>
-                    <input type="checkbox" class="shadow-checkbox">
+                    <input type="checkbox" class="shadow-checkbox" onchange="handleShadowChange(this)">
 
                     <select class="drop-down font-picker" onchange="filterByDropdown(this.value)">
                         <option selected="selected" value="impact">Impact</option>
