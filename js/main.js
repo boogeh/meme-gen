@@ -44,12 +44,12 @@ function onSetStrokeColor(elColor) {
 }
 
 function clearInputs() {
-    document.querySelector('.fill-color').value = ''
-    document.querySelector('.stroke-color').value = ''
-    document.querySelector('#line1').value = ''
-    document.querySelector('#line2').value = ''
+    document.querySelector('.fill-color').value = ''   
+    document.querySelector('.stroke-color').value = ''   
+    document.querySelector('#line1').value = ''   
+    // document.querySelector('#line2').value = ''
     document.querySelector('.shadow-checkbox').checked = false;
-    resetSettings()
+    // resetSettings()
 }
 
 function toggleMenu() {
@@ -63,3 +63,32 @@ function toggleMenu() {
     else hamburger.innerHTML= '<i class="fas fa-times"></i>';
 }
 
+function onMoveUp() {
+    moveUp()
+}
+
+function onMoveDown() {
+    moveDown()
+}
+
+function onMoveLeft() {
+    moveLeft()
+}
+
+function onMoveRight() {
+    moveRight()
+}
+
+function onAddLine() {
+    addLine()
+    renderInputs()
+}
+
+function renderInputs() {
+    var currText = getCurrText()
+    document.querySelector('.fill-color').value = currText.fillColor;
+    document.querySelector('.stroke-color').value = currText.strokeColor;
+    document.querySelector('.input-line').value = currText.txt;
+    document.querySelector('.shadow-checkbox').checked = currText.shadow;
+    document.querySelector('.font-picker').value = currText.font;
+}
