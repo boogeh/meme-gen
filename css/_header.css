@@ -7,18 +7,8 @@
     padding: 25px 25px;
     background-color: #292929;
 
-    /* background-color: var(--dark); */
 }
-/* .menu-icon{
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    background-color: rgba(0,0,0,0); 
-    color: white;
-    border: none;
-    font-size: 30px;
-    visibility: hidden;
-} */
+
 .screen {
     position: fixed;
     height: 100%;
@@ -39,16 +29,18 @@
 
 .top-nav-logo{
     font-size: 40px;
+    min-width: 220px;
+    padding-left: 20px;
     color: var(--light);
     text-transform: capitalize;
 }
-
-
+.top-nav{
+    width: 100%;
+}
 
 .main-nav{
     display: none;
-    opacity: 0;
-    transition:  4s;
+    transition:  .5s;
 }
 
 .main-nav.open {
@@ -63,7 +55,7 @@
 a{
     color: white;
     text-decoration: none;
-    position: relative;
+    /* position: relative; */
     /* margin: 0 auto; */
     right: 10px;
     width: 90vw;
@@ -78,32 +70,31 @@ a{
 
 a:hover{
     color: white;
-    box-shadow: none;
-    background-color: #4f4e4e;
+    background-color: greenyellow;
 
 }
 a:focus{
     color: white;
-    box-shadow: none;
 }
 
 
 
-@media (min-width: 740px){
-
+@media (min-width: 680px){
+    .header-content{
+        padding: 0;
+    }
+    .hamburger{
+        display:none;
+        /* visibility: hidden; */
+    }
     .main-nav{
         display: block;
+
     }
-    .spinner-master{
-        visibility: hidden
-    }
-    
-
-/* .header-container {
-    width: 100vw;
-
-} */
-
+    /* .top-nav{
+        display: flex;
+        justify-content: space-between
+    } */
 
 .bottom-nav-logo{
     color: var(--light);
@@ -117,32 +108,30 @@ a:focus{
 
 
 
-.align-center{
-    align-items: center
-}
-.space-between{
-    justify-content: space-between;
-}
 a{
     text-transform: capitalize;
     text-decoration: none;
-    color: white;
+    color: var(--light);
+    background-color: #292929;
     transition: color .2s;
     display: inline-block;
     text-align: center;
-    border-left: 1px solid #1e1e1e;
-    font-size: 16px;
-    font-weight: 700;
-    width: 130px;
-    line-height: 130px;
-}
-a:last-child{
-    border-right: 1px solid #1e1e1e;
+        border-left: 1px solid #1e1e1e;
+        font-size: 16px;
+        font-weight: 700;
+        width: 120px;
+        line-height: 120px;
+    }
+    a:last-child{
+     border-right: 1px solid #1e1e1e;
 
-}
-a:focus{
-    color: var(--mid);
-}
+    }
+    a:hover{
+        background-color: #1e1e1e;
+    }
+    a:focus{
+       color: var(--mid);
+    }
 
 
 }
