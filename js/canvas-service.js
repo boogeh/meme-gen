@@ -2,25 +2,8 @@
 var gPopularWords;
 var gCanvas;
 var gCtx;
-var gMeme = {
-    selectedElImg: null,
-    txts: [
-        {
-            txt: '',
-            size: 30,
-            align: '',
-            fillColor: '#ffffff',
-            strokeColor: '#000000',
-            font: 'impact',
-            shadow: false,
-            x: 150,
-            y: 150,
-            txtWidth: null,
-        },
-    ]
-}
-
-var gCurrText = gMeme.txts[0]
+var gCurrText;
+var gMeme;
 
 
 function setCanvas() {
@@ -28,7 +11,33 @@ function setCanvas() {
     gCanvas = document.querySelector('.main-canvas')
     gCanvas.width = elCanvasDiv.clientWidth; // canvas width same as img width
     gCtx = gCanvas.getContext('2d')
-    // resetSettings();
+}
+
+
+function resetMeme() {
+    gMeme = createMeme();
+    gCurrText = gMeme.txts[0]
+}
+
+
+function createMeme() {
+    return {
+        selectedElImg: null,
+        txts: [
+            {
+                txt: '',
+                size: 40,
+                align: '',
+                fillColor: '#ffffff',
+                strokeColor: '#000000',
+                font: 'impact',
+                shadow: true,
+                x: 150,
+                y: 150,
+                txtWidth: null,
+            },
+        ]
+    }
 }
 
 function drawImage(elImg) {
@@ -39,17 +48,12 @@ function drawImage(elImg) {
     gMeme.selectedElImg = elImg
 }
 
-function backToGallery() {
-    document.querySelector('.canvas-container').classList.add('hide');
-    document.querySelector('.gallery-container').classList.remove('hide');
-}
-
-
 function setText(elText) {
     var textLine = elText.value;
     gCurrText.txt = textLine
     draw()
 }
+
 function draw() {
     var elImg = gMeme.selectedElImg
     drawImage(elImg)
@@ -58,9 +62,13 @@ function draw() {
         gCtx.font = currText.size + 'px ' + currText.font;
         gCtx.strokeStyle = currText.strokeColor;
         gCtx.fillStyle = currText.fillColor;
-        gCtx.lineWidth = 5;
+        if (currText.shadow) {
+            gCtx.lineWidth = 5
+            gCtx.strokeText(currText.txt, currText.x, currText.y);
+        } else {
+            gCtx.lineWidth = 0;
+        }
         currText.txtWidth = gCtx.measureText(currText.txt).width
-        gCtx.strokeText(currText.txt, currText.x, currText.y);
         gCtx.fillText(currText.txt, currText.x, currText.y);
     }
 }
@@ -88,7 +96,7 @@ function setStrokeColor(elColor) {
 function downloadCanvas(elLink) {
     console.log(gCanvas.toDataURL())
     elLink.href = gCanvas.toDataURL()
-    elLink.download = 'mem.jpg'
+    elLink.download = 'meme.jpg'
 }
 
 function moveUp() {
@@ -106,6 +114,16 @@ function moveLeft(elBtn) {
 function moveRight(elBtn) {
     gCurrText.x += 10
     draw()
+}
+
+function shadowChange(elBox) {
+    var checked = elBox.checked
+    if (checked) {
+        gCurrText.shadow = true;
+    } else {
+        gCurrText.shadow = false;
+    }
+    draw();
 }
 
 function newLine() {
@@ -133,23 +151,9 @@ function getCurrText() {
     return gCurrText
 }
 
-function controlLastText() {
-
-}
-
-function controlNextText() {
-
-}
-
 
 function canvasClick(ev) {
     var textLine = gMeme.txts.find(function (textLine) {
-        // console.log(textLine);
-        // console.log(ev.layerY)
-        // console.log('layerX: ', ev.layerX, ' > textLine.x: ',textLine.x)
-        // console.log('layerX: ', ev.layerX, ' < textLine.x: ',textLine.x + textLine.txtWidth)
-        // console.log('layerY: ', ev.layerY, ' < textLine.y: ', textLine.y)
-        // console.log('layerY: ', ev.layerY, ' > textLine.y: ',textLine.y + textLine.size)
         return (
             ev.layerX > textLine.x &&
             ev.layerX < textLine.x + textLine.txtWidth &&
@@ -157,7 +161,6 @@ function canvasClick(ev) {
             ev.layerY > textLine.y - textLine.size
         )
     })
-    console.log(textLine)
     if (textLine) {
         gCurrText = textLine
     }
