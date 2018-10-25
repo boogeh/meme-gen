@@ -81,7 +81,7 @@
                         <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
                         <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
                     </div>
-                    
+
                     <div class="color-input">
                         Fill
                         <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
@@ -99,14 +99,16 @@
                         <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">▶</button>
                     </div>
                     <div class="shadow-container">Shadow</div>
-<<<<<<< HEAD
-
-                    <input type="checkbox" class="shadow-checkbox">
-=======
                     <input type="checkbox" class="shadow-checkbox" onchange="handleShadowChange(this)">
->>>>>>> 3427badd29a6851a4e8a54268a40c6a0bca02207
 
-              
+                    <select class="drop-down font-picker" onchange="filterByDropdown(this.value)">
+                        <option selected="selected" value="impact">Impact</option>
+                        <option value="impact">Impact</option>
+                        <option value="coming">Coming-Soon</option>
+                        <option value="Chakra Petch">Chakra Petch</option> Chakra Petch
+                    </select>
+
+
                     <div class="btn btn-save" onclick="downloadCanvas(this)">Download</div>
 
                 </div>
