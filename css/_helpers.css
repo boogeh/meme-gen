@@ -5,6 +5,28 @@
     /* padding: 0 10px; */
 }
 
+/* *** Fonts*** */
+.coming{
+
+    font-family: 'Coming Soon', cursive;
+}
+.combo{
+    font-family: 'Combo', cursive;
+
+}
+.chakra{
+    font-family: 'Chakra Petch', sans-serif;
+
+}
+.roboto{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+
+
 .flex{
     display:flex
 }
@@ -22,4 +44,7 @@
 }
 .space-between{
     justify-content: space-between;
+}
+.start{
+    justify-content: start;
 }

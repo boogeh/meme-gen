@@ -77,6 +77,9 @@ a:focus{
     color: white;
 }
 
+.input-line{
+    width: 80%;
+}
 
 
 @media (min-width: 680px){
