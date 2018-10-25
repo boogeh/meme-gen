@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Combo|Coming+Soon|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Combo|Coming+Soon|Roboto|Charmonman" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Meme Generator</title>
 </head>
@@ -70,7 +70,7 @@
                 <div class="input-box flex row start">
                     <input type="text" placeholder="your text here" class="input-line" id="line1" value="New line"
                         onkeyup="onSetText(this)">
-                    <div class="delete-row"><i class="far fa-trash-alt"></i></div>
+                    <div class="delete-text" onclick="onDeleteText()"><i class="far fa-trash-alt"></i></div>
                     <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
                 </div>
 
@@ -101,11 +101,13 @@
                     <div class="shadow-container">Shadow</div>
                     <input type="checkbox" class="shadow-checkbox" onchange="handleShadowChange(this)">
 
-                    <select class="drop-down font-picker" onchange="filterByDropdown(this.value)">
-                        <option selected="selected" value="impact">Impact</option>
-                        <option value="impact">Impact</option>
-                        <option value="coming">Coming-Soon</option>
-                        <option value="Chakra Petch">Chakra Petch</option> Chakra Petch
+                    <select class="drop-down font-picker" onchange="onChangeFont(this.value)">
+                        <option selected="selected" value="impact" class="font-impact">Impact</option>
+                        <option value="Charmonman" class="font-charmonman">Charmonman</option>
+                        <option value="Roboto" class="font-roboto">Roboto</option>
+                        <option value="Combo" class="font-combo">Combo</option>
+                        <option value="coming" class="font-coming">Coming-Soon</option>
+                        <option value="Chakra Petch" class="font-chakra">Chakra Petch</option> Chakra Petch
                     </select>
 
 
@@ -119,7 +121,7 @@
     </main>
     <footer class="container"></footer>
 
-    <script src="js/info-service.js"></script>
+    <script src="js/util-service.js"></script>
     <script src="js/canvas-service.js"></script>
     <script src="js/gallery-service.js"></script>
     <script src="js/main.js"></script>

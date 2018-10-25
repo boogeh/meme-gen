@@ -1,7 +1,6 @@
 'use strict'
 
 
-const IMG_COUNT = 25;
 var gId = 1
 var gFilteredImg;
 var gImgs = createImgs();

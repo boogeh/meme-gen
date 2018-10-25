@@ -72,9 +72,18 @@ function handleShadowChange(elBox) {
     shadowChange(elBox)
 }
 
+function onDeleteText() {
+    deleteText()
+    renderInputs()
+}
+
 function onCanvasClick(ev) {
     canvasClick(ev)
     renderInputs()
+}
+
+function onChangeFont(font) {
+    changeFont(font)
 }
 
 function toggleMenu() {
