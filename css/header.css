@@ -5,7 +5,7 @@
     color: var(--light);
     height: 120px;
     padding: 25px 25px;
-    background-color: #292929;
+    background-color: var(--dark);
 
 }
 
@@ -73,9 +73,7 @@ a:focus{
     color: var(--light);
 }
 
-.input-line{
-    width: 80%;
-}
+
 
 
 @media (min-width: 680px){
@@ -116,21 +114,21 @@ a{
     font-size: 2rem;
 
     color: var(--light);
-    background-color: #292929;
+    background-color: var(--dark);
     transition: color .2s;
     display: inline-block;
-        border-left: 1px solid #1e1e1e;
-        font-size: 16px;
+        border-left: 1px solid #515a69;
+        font-size: 1.2rem;
         font-weight: 700;
         width: 110px;
         line-height: 120px;
     }
     a:last-child{
-     border-right: 1px solid #1e1e1e;
+     border-right: 1px solid #515a69;
 
     }
     a:hover{
-        background-color: #3a3a3a;
+        background-color: #4b535f;
     }
     a:focus{
        color: var(--mid);

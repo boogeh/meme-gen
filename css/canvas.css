@@ -59,18 +59,24 @@
     margin-bottom: 15px;
 }
 .input-box{
+    /* width: 100%; */
     color: var(--dark);
     margin-bottom: 15px;
     /* margin-right: 10px; */
+
     justify-content: baseline;
     
 }
-.delete-row{
+.input-line{
+
+    width: 80%
+}
+.delete-text{
     margin-left: 12px;
     padding: 5px;
     font-size: 1.2rem;
 }
-.delete-row:hover{
+.delete-text:hover{
     cursor: pointer;
 }
 
@@ -84,7 +90,8 @@
 }
 
 .font-minus{
-    margin-left: 12px;
+    /* margin-left: 12px; */
+    margin-top: 4px;
     padding: 5px;
     font-size: 1.2rem;
 }
@@ -93,9 +100,10 @@
 }
 
 .font-plus{
-    margin-left: 8px;
-    margin-right: 8px;
 
+    margin-left: 8px;
+    /* margin-right: 8px; */
+    margin-top: 4px;
     padding: 5px;
     font-size: 1.2rem;
 }
@@ -103,6 +111,8 @@
     cursor: pointer;
 }
 .font-input{
+
+    min-width: 180px;
     color: var(--dark);
     border: 1px solid var(--dark);
     border-radius: 5px;
@@ -110,26 +120,55 @@
     padding-right: 8px;
     padding-left: 8px;
 }
+
 .fontLine{
     margin:auto;
     
 }
 
 .color-input{
+    text-align: center;
+    min-width: 100px;
     color: var(--dark);
     border: 1px solid var(--dark);
     border-radius: 5px;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     padding-right: 8px;
     padding-left: 8px;
 
 }
 
 .buttons{
+    width:100%;
     height: 40px;
     margin-bottom: 15px;
 
 }
+.font-picker{
+    background-color: white;
+}
+
+.move-btn{
+    color: var(--dark);
+    font-size: 1.2rem;
+}
+.move-btn:hover{
+    cursor: pointer;
+    
+}
+.shadow-container{
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    color: var(--dark);
+}
+.shadow-container:hover{
+    cursor: pointer;
+}
+.shadow-container:focus{
+    background-color: var(--dark);
+}
+
+
 
 
         

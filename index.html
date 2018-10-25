@@ -21,6 +21,7 @@
     <section class="header-container">
 
         <div class="header-content container flex">
+            <div class="screen" onclick="toggleMenu()"></div>
 
             <div class="nav top-nav flex align-center space-between">
                 <div class="logo top-nav-logo" alt="Meme Generator">Meme Generator</div>
@@ -35,7 +36,6 @@
         </div>
     </section>
 
-    <div class="screen" onclick="toggleMenu()"></div>
 
     <div class="about-page hide">
         <div class="about-text-wrapper">
@@ -67,16 +67,16 @@
 
             <div class="canvas-controllers flex column space-between">
 
-                <div class="input-box flex row start">
+                <div class="input-box flex row space-between">
                     <input type="text" placeholder="your text here" class="input-line" id="line1" value="New line"
                         onkeyup="onSetText(this)">
-                    <div class="delete-row"><i class="far fa-trash-alt"></i></div>
+                    <div class="delete-text"><i class="far fa-trash-alt"></i></div>
                     <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
                 </div>
 
 
-                <div class="buttons flex row start">
-                    <div class="font-input flex row start">
+                <div class="buttons flex row space-between">
+                    <div class="font-input flex row ">
                         <div class="fontLine">Font Size<span class="fontSize"></span></div>
                         <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
                         <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
@@ -93,13 +93,17 @@
                 </div>
                 <div class="buttons flex row start">
                     <div class="move-btns">
-                        <button class="move-up move-up-line1 line1" onclick="onMoveUp(this)">▲</button>
-                        <button class="move-down move-down-line1 line1" onclick="onMoveDown(this)">▼</button>
-                        <button class="move-left move-left-line1 line1" onclick="onMoveLeft(this)">◀</button>
-                        <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">▶</button>
+                        <button class="move-btn move-up move-up-line1" onclick="onMoveUp(this)"><i class="fas fa-arrow-up"></i></button>
+                        <button class="move-btn move-down move-down-line1 " onclick="onMoveDown(this)"><i class="fas fa-arrow-down"></i></button>
+                        <button class="move-btn move-left move-left-line1" onclick="onMoveLeft(this)"><i class="fas fa-arrow-left"></i></button>
+                        <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <div class="shadow-container">Shadow</div>
-                    <input type="checkbox" class="shadow-checkbox" onchange="handleShadowChange(this)">
+                    <section title=".slideOne">
+                        <div class="shadow-container slideOne">shadow
+                            <input type="checkbox" class="shadow-checkbox" name="check" id="slideOne" onchange="handleShadowChange(this)">
+                            <label for="slideOne"></label>
+                        </div>
+                    </section>
 
                     <select class="drop-down font-picker" onchange="filterByDropdown(this.value)">
                         <option selected="selected" value="impact">Impact</option>
