@@ -23,20 +23,7 @@ function resetMeme() {
 function createMeme() {
     return {
         selectedElImg: null,
-        txts: [
-            {
-                txt: '',
-                size: 40,
-                align: '',
-                fillColor: '#ffffff',
-                strokeColor: '#000000',
-                font: 'impact',
-                shadow: true,
-                x: 150,
-                y: 150,
-                txtWidth: null,
-            },
-        ]
+        txts: [newLine()]
     }
 }
 
@@ -116,6 +103,23 @@ function moveRight(elBtn) {
     draw()
 }
 
+function findCurrTextIdx() {
+    var textIdx = gMeme.txts.findIndex(txt => {
+        return txt.id === gCurrText.id
+    })
+    return textIdx
+}
+
+function deleteText() {
+    var txtIdx = findCurrTextIdx()
+    gMeme.txts.splice(txtIdx, 1) 
+    if (!gMeme.txts.length) {
+        addLine()
+    }
+    gCurrText = gMeme.txts[0]
+    draw()
+}
+
 function shadowChange(elBox) {
     var checked = elBox.checked
     if (checked) {
@@ -126,15 +130,21 @@ function shadowChange(elBox) {
     draw();
 }
 
+function changeFont(font) {
+    gCurrText.font = font
+    draw()
+}
+
 function newLine() {
     return {
-        txt: 'New line',
-        size: 30,
+        id: generateId(),
+        txt: '',
+        size: 40,
         align: '',
         fillColor: '#ffffff',
         strokeColor: '#000000',
         font: 'impact',
-        shadow: false,
+        shadow: true,
         x: 150,
         y: 150,
     }
@@ -144,7 +154,7 @@ function addLine() {
     var newLineTemplate = newLine()
     gMeme.txts.push(newLineTemplate)
     gCurrText = newLineTemplate
-    draw()
+    // draw()
 }
 
 function getCurrText() {
