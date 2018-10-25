@@ -107,16 +107,16 @@
                         <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
                     </div>
 
-                    <div class="shadow-container slideOne">shadow
-                        <input type="checkbox" class="shadow-checkbox" name="check" id="slideOne" onchange="handleShadowChange(this)">
-                        <label for="slideOne"></label>
-                    </div>
+                    <section>
+                        <div class="shadow-container">
+                            <div class="shadow-checkbox checked" onclick="handleShadowChange(this)">Shadow</div>
+                        </div>
+                    </section>
 
 
 
 
-
-                    <div class="btn btn-save" onclick="downloadCanvas(this)">Download</div>
+                    <div class="btn btn-save"><a onclick="downloadCanvas(this)">Download</a></div>
 
                 </div>
 
