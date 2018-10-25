@@ -18,9 +18,10 @@
 
 :root {
     --dark: #59606d;
+    --darkB: #505663;
     --mid: #70acb1;
     --midB: #659ea3;
-    --light: #c6f1e7;
+    --light: #bed6db;
     --boom: #ff7c38;
     --superLight: lightgray;
   }

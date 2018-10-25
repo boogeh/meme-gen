@@ -56,7 +56,7 @@ a.nav-a{
     text-decoration: none;
     /* width: 60vw; */
     width: 70vw;
-    background: rgba(98, 98, 98, 1);
+    background: var(--dark);
     line-height: 110px;
     border:none;
     margin-bottom: 2px;
@@ -64,9 +64,12 @@ a.nav-a{
     text-align: center;
 }
 
+a.nav-a:first-child{
+    margin-top: 2px;
+}
 a.nav-a:hover{
     color: var(--light);
-    background-color: rgb(80, 80, 80);
+    background: var(--darkB);
 
 }
 a.nav-a:focus{
@@ -116,7 +119,7 @@ a.nav-a{
 
     color: var(--light);
     background-color: var(--dark);
-    transition: color .2s;
+    transition: color .3s;
     display: inline-block;
         border-left: 1px solid #515a69;
         font-size: 1.2rem;
