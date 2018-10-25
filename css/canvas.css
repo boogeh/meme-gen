@@ -28,8 +28,9 @@
     width: 100%;
 }
 .canvas-controllers{
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 100%;
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
 }
 
 
@@ -56,12 +57,12 @@
 
 
 .main-canvas{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .input-box{
     /* width: 100%; */
     color: var(--dark);
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     /* margin-right: 10px; */
 
     justify-content: baseline;
@@ -111,14 +112,16 @@
     cursor: pointer;
 }
 .font-input{
-
-    min-width: 180px;
+    width:48%;
     color: var(--dark);
-    border: 1px solid var(--dark);
-    border-radius: 5px;
-    margin-right: 15px;
+    border: 1px solid lightgray;
+    margin-bottom: 5px;
+
+    /* border-radius: 5px; */
+    margin-right: 4%;
     padding-right: 8px;
     padding-left: 8px;
+    
 }
 
 .fontLine{
@@ -128,11 +131,10 @@
 
 .color-input{
     text-align: center;
-    min-width: 100px;
+    width: 48%;
     color: var(--dark);
-    border: 1px solid var(--dark);
-    border-radius: 5px;
-    /* margin-right: 15px; */
+    border: 1px solid lightgray;
+    margin-bottom: 5px;
     padding-right: 8px;
     padding-left: 8px;
 
@@ -141,24 +143,41 @@
 .buttons{
     width:100%;
     height: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 
 }
 .font-picker{
-    background-color: white;
+    width: 48%;
+    height: 39px;
+    margin-right: 4%;
+    border: 1px solid lightgray;
+    background:none;
+    margin-bottom: 5px;
 }
-
+.move-btns{
+    width: 48%;
+    text-align: center;
+    margin-bottom: 5px;
+    border: 1px solid lightgray;
+}
 .move-btn{
+    height: 39px;
     color: var(--dark);
     font-size: 1.2rem;
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--dark);
 }
 .move-btn:hover{
     cursor: pointer;
     
 }
 .shadow-container{
-    border: 1px solid var(--dark);
-    border-radius: 5px;
+    width: 48%;
+    margin-right: 4%;
+
+    border: 1px solid lightgray;
     color: var(--dark);
 }
 .shadow-container:hover{
@@ -167,6 +186,21 @@
 .shadow-container:focus{
     background-color: var(--dark);
 }
+
+.btn-save{
+    border: 1px solid lightgray;
+    height: 39px;
+    text-transform: uppercase;
+    color: var(--dark);
+    width: 48%;
+    text-align: center;
+}
+
+.btn-save:hover{
+    cursor: pointer;
+}
+
+
 
 
 

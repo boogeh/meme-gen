@@ -14,7 +14,7 @@
     font-family: 'Combo', cursive;
 
 }
-.chakra{
+.cvekra{
     font-family: 'Chakra Petch', sans-serif;
 
 }
@@ -38,6 +38,12 @@
 }
 .hide{
     display: none;
+}
+.wrap{
+    flex-wrap:  wrap;
+  }
+.center{
+    justify-content: center
 }
 .align-center{
     align-items: center

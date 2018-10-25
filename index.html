@@ -24,7 +24,7 @@
             <div class="screen" onclick="toggleMenu()"></div>
 
             <div class="nav top-nav flex align-center space-between">
-                <div class="logo top-nav-logo" alt="Meme Generator">Meme Generator</div>
+                <div class="logo top-nav-logo" alt="Meme Generator">Da Generator</div>
                 <nav class="main-nav ">
                     <a href="index.html">Gallery</a>
                     <a href="#">About</a>
@@ -59,7 +59,8 @@
 
         <section class="canvas-container hide">
 
-            <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow">⬅</span> Back To Gallery</button>
+            <button class="btn-closeEditor" onclick="onBackBtn()"><span class="arrow"><i class="fas fa-arrow-left"></i></span>
+                Back To Gallery</button>
 
             <div class="canvas-wrapper">
                 <canvas class="main-canvas" onclick="onCanvasClick(event)"></canvas>
@@ -75,44 +76,44 @@
                 </div>
 
 
-                <div class="buttons flex row space-between">
-                    <div class="font-input flex row ">
+                <div class="buttons flex wrap">
+                    <div class="font-input flex row center ">
                         <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
-                        <div class="fontLine">Font Size<span class="fontSize"></span></div>
+                        <!-- <div class="fontLine">Font Size<span class="fontSize"></span></div> -->
                         <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
                     </div>
 
                     <div class="color-input">
-                        Fill
+                        <!-- Fill -->
                         <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
-                    </div>
-                    <div class="color-input">
-                        Stroke
+
+                        <!-- Stroke -->
                         <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
                     </div>
-                </div>
-                <div class="buttons flex row start">
-                    <div class="move-btns">
-                        <button class="move-btn move-up move-up-line1" onclick="onMoveUp(this)"><i class="fas fa-arrow-up"></i></button>
-                        <button class="move-btn move-down move-down-line1 " onclick="onMoveDown(this)"><i class="fas fa-arrow-down"></i></button>
-                        <button class="move-btn move-left move-left-line1" onclick="onMoveLeft(this)"><i class="fas fa-arrow-left"></i></button>
-                        <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
-                    </div>
-                    <section title=".slideOne">
-                        <div class="shadow-container slideOne">shadow
-                            <input type="checkbox" class="shadow-checkbox" name="check" id="slideOne" onchange="handleShadowChange(this)">
-                            <label for="slideOne"></label>
-                        </div>
-                    </section>
-
                     <select class="drop-down font-picker" onchange="onChangeFont(this.value)">
-                        <option selected="selected" value="impact" class="font-impact">Impact</option>
+                        <option selected="selected" value="impact" class="font-impact">Fonts <i class="fas fa-arrows-alt-v"></i></option>
+                        <option value="impact" class="font-impact">Impact</option>
                         <option value="Charmonman" class="font-charmonman">Charmonman</option>
                         <option value="Roboto" class="font-roboto">Roboto</option>
                         <option value="Combo" class="font-combo">Combo</option>
                         <option value="coming" class="font-coming">Coming-Soon</option>
-                        <option value="Chakra Petch" class="font-chakra">Chakra Petch</option> Chakra Petch
+                        <option value="Chakra Petch" class="font-chakra">Chakra Petch</option>
                     </select>
+
+                    <div class="move-btns">
+                        <button class="move-btn move-left move-left-line1" onclick="onMoveLeft(this)"><i class="fas fa-arrow-left"></i></button>
+                        <button class="move-btn move-up move-up-line1" onclick="onMoveUp(this)"><i class="fas fa-arrow-up"></i></button>
+                        <button class="move-btn move-down move-down-line1 " onclick="onMoveDown(this)"><i class="fas fa-arrow-down"></i></button>
+                        <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <div class="shadow-container slideOne">shadow
+                        <input type="checkbox" class="shadow-checkbox" name="check" id="slideOne" onchange="handleShadowChange(this)">
+                        <label for="slideOne"></label>
+                    </div>
+
+
+
 
 
                     <div class="btn btn-save" onclick="downloadCanvas(this)">Download</div>
