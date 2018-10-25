@@ -2,25 +2,8 @@
 var gPopularWords;
 var gCanvas;
 var gCtx;
-var gSettings;
-var gText =
-{
-    line1: {
-        id: 'line1',
-        txt: '',
-        x: 70,
-        y: 70,
-    },
-    line2: {
-        id: 'line2',
-        txt: '',
-        x: 70,
-        y: (400),
-    },
-}
-
 var gMeme = {
-    selectedElImg: null, // TODO
+    selectedElImg: null,
     txts: [
         {
             txt: '',
@@ -28,10 +11,11 @@ var gMeme = {
             align: '',
             fillColor: '#ffffff',
             strokeColor: '#000000',
-            font: 'Impact',
+            font: 'impact',
             shadow: false,
             x: 150,
             y: 150,
+            txtWidth: null,
         },
     ]
 }
@@ -62,9 +46,7 @@ function backToGallery() {
 
 
 function setText(elText) {
-    // var textLineId = elText['id'];
     var textLine = elText.value;
-    console.log(gCurrText.txt)
     gCurrText.txt = textLine
     draw()
 }
@@ -77,14 +59,11 @@ function draw() {
         gCtx.strokeStyle = currText.strokeColor;
         gCtx.fillStyle = currText.fillColor;
         gCtx.lineWidth = 5;
+        currText.txtWidth = gCtx.measureText(currText.txt).width
         gCtx.strokeText(currText.txt, currText.x, currText.y);
         gCtx.fillText(currText.txt, currText.x, currText.y);
     }
 }
-
-// function setFontSize() {
-//     gCurrText.fontSize = Math.round(gCanvas.width / 15);
-// }
 
 function fontMinus() {
     gCurrText.size -= 2;
@@ -105,20 +84,6 @@ function setStrokeColor(elColor) {
     gCurrText.strokeColor = elColor;
     draw();
 }
-
-
-// function resetSettings() {
-//     gSettings = {
-//         elImg: '',
-//         line1: '',
-//         line2: '',
-//         fontSize: '',
-//         strokeColor: '#000000',
-//         fillColor: '#ffffff',
-//         shadow: false,
-//         font: 'Arial',
-//     }
-// }
 
 function downloadCanvas(elLink) {
     console.log(gCanvas.toDataURL())
@@ -168,68 +133,32 @@ function getCurrText() {
     return gCurrText
 }
 
+function controlLastText() {
 
-function renderPopularKeywords() {
-
-    var elSearchWord = document.querySelector('.dropdown-content')
-    var keywords = [`<option selected="selected" value="all">All</option>`]
-    for (let i = 0; i < 4; i++) {
-        keywords.push( `<option  value="${gPopularWords[i][0]}">${gPopularWords[i][0]}</option>`)
-    }
-    elSearchWord.innerHTML = keywords.join('');
 }
 
-function mapByKeywords() {
-    var popularWords = {};
-    gImgs.forEach(img => {
-        img.keywords.forEach(keyword => {
-            if (!popularWords[keyword]) popularWords[keyword] = 1;
-            else popularWords[keyword]++;
-        })
+function controlNextText() {
+
+}
+
+
+function canvasClick(ev) {
+    var textLine = gMeme.txts.find(function (textLine) {
+        // console.log(textLine);
+        // console.log(ev.layerY)
+        // console.log('layerX: ', ev.layerX, ' > textLine.x: ',textLine.x)
+        // console.log('layerX: ', ev.layerX, ' < textLine.x: ',textLine.x + textLine.txtWidth)
+        // console.log('layerY: ', ev.layerY, ' < textLine.y: ', textLine.y)
+        // console.log('layerY: ', ev.layerY, ' > textLine.y: ',textLine.y + textLine.size)
+        return (
+            ev.layerX > textLine.x &&
+            ev.layerX < textLine.x + textLine.txtWidth &&
+            ev.layerY < textLine.y &&
+            ev.layerY > textLine.y - textLine.size
+        )
     })
-    return popularWords
-}
-
-function sortPopularWords() {
-    var mapByPopular = mapByKeywords();
-    var sortedPopular = [];
-    for (var apearance in mapByPopular) {
-        sortedPopular.push([apearance, mapByPopular[apearance]]);
+    console.log(textLine)
+    if (textLine) {
+        gCurrText = textLine
     }
-
-    sortedPopular.sort(function (b, a) {
-        return a[1] - b[1];
-    });
-    gPopularWords = sortedPopular;
-
 }
-
-function drawCharts() {
-    gStars.forEach((star, idx) => {
-        gCtx.fillStyle = 'black';
-        star.x = idx * (barWidth + 10);
-        star.y = gCanvas.height - star.rate * heightFactor;
-        gCtx.fillRect(star.x, star.y, barWidth, star.rate * heightFactor);
-    });
-}
-
-// function canvasClicked(ev) {
-//     var elModal = document.querySelector('.modal')
-
-//     var textLine = gMeme.txts.find(function (textLine) {
-//         return (
-//             ev.clientX > textLine.x &&
-//             ev.clientX < textLine.x + 100 &&
-//             ev.clientY > textLine.y &&
-//             ev.clientY < textLine.y + textLine.size
-//         )
-//     })
-//     if (textLine) {
-//         elModal.style.display = 'block'
-//         elModal.innerText = 'Name: ' + textLine.name + ' Rate: ' + textLine.rate
-//         elModal.style.top = ev.clientY + 'px'
-//         elModal.style.left = ev.clientX + 'px'
-//     } else {
-//         elModal.style.display = 'none'
-//     }
-// }

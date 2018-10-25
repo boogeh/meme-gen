@@ -3,8 +3,8 @@
 function init() {
     renderGallery();
     clearInputs();
-    sortPopularWords();
-    renderPopularKeywords();
+    // sortPopularWords();
+    // renderPopularKeywords();
 
 }
 
@@ -91,4 +91,24 @@ function renderInputs() {
     document.querySelector('.input-line').value = currText.txt;
     document.querySelector('.shadow-checkbox').checked = currText.shadow;
     document.querySelector('.font-picker').value = currText.font;
+}
+
+function onCanvasClick(ev) {
+    canvasClick(ev)
+    renderInputs()
+}
+
+
+
+
+
+
+function renderPopularKeywords() {
+
+    var elSearchWord = document.querySelector('.dropdown-content')
+    var keywords = [`<option selected="selected" value="all">All</option>`]
+    for (let i = 0; i < 4; i++) {
+        keywords.push( `<option  value="${gPopularWords[i][0]}">${gPopularWords[i][0]}</option>`)
+    }
+    elSearchWord.innerHTML = keywords.join('');
 }
