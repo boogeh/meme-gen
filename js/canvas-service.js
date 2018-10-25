@@ -14,7 +14,7 @@ var gText = [
         id: line2,
         txt: '',
         x: 70,
-        y: (gCanvas.height - 50),
+        y: (150),
     },
 
 ]
@@ -105,23 +105,20 @@ function downloadCanvas(elLink) {
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'mem.jpg'
 }
-<<<<<<< HEAD
-renderPopularKeywords();
 
 function renderPopularKeywords() {
-    var elSearchWord = document.querySelectorAll('.option-filler')
-    console.log(elSearchWord);
-    var options = []
-    for (let i = 0; i < elSearchWord.length; i++) {
-        options.push(`
-        <option  value="${gPopularWords[i]}">${gPopularWords[i]}</option>
-        `)
-        elSearchWord.innerHtml(' ');
-        console.log(elSearchWord);
 
+    var elSearchWord = document.querySelector('.dropdown-content')
+    var keywords = [`<option selected="selected" value="all">All</option>`]
+    for (let i = 0; i < 4; i++) {
+        keywords.push( `<option  value="${gPopularWords[i][0]}">${gPopularWords[i][0]}</option>`)
     }
+    console.log(elSearchWord);
+    console.log(keywords.join(' '));
 
+    elSearchWord.innerHTML = keywords.join('');
 }
+
 function mapByKeywords() {
     var popularWords = {};
     gImgs.forEach(img => {
@@ -177,5 +174,3 @@ function canvasClicked(ev) {
     }
 }
 
-=======
->>>>>>> be4361c9d0e56dd05db36968f9cbfc358ae85f17

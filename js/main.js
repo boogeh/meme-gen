@@ -4,6 +4,8 @@ function init() {
     renderGallery();
     clearInputs();
     sortPopularWords();
+    renderPopularKeywords();
+
 }
 
 function renderGallery() {
@@ -14,7 +16,7 @@ function renderGallery() {
                 <img src="${img.url}" onclick="onImgSelect(this)"></img>
                 </div>`
     })
-    elGallery.innerHTML = strHtmls.join('')
+    elGallery.innerHTML = strHtmls.join(' ')
 }
 
 function onImgSelect(elImg) {
@@ -25,7 +27,7 @@ function onImgSelect(elImg) {
     drawImage(elImg);
 }
 
-function onBackBtn(){
+function onBackBtn() {
     backToGallery();
 }
 
@@ -42,11 +44,22 @@ function onSetStrokeColor(elColor) {
 }
 
 function clearInputs() {
-    document.querySelector('.fill-color').value = ''   
-    document.querySelector('.stroke-color').value = ''   
-    document.querySelector('#line1').value = ''   
+    document.querySelector('.fill-color').value = ''
+    document.querySelector('.stroke-color').value = ''
+    document.querySelector('#line1').value = ''
     document.querySelector('#line2').value = ''
     document.querySelector('.shadow-checkbox').checked = false;
     resetSettings()
+}
+
+function toggleMenu() {
+    var nav = document.querySelector('.main-nav');
+    nav.classList.toggle('open');
+    var screen = document.querySelector('.screen');
+    screen.classList.toggle('open')
+    var hamburger = document.querySelector('.hamburger')
+    if (hamburger.innerHTML === '<i class="fas fa-times"></i>')
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>'
+    else hamburger.innerHTML= '<i class="fas fa-times"></i>';
 }
 
