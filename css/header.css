@@ -63,10 +63,10 @@ a.nav-a{
     padding-left: 20px;
     text-align: center;
 }
-
 a.nav-a:first-child{
     margin-top: 2px;
-}
+  }
+
 a.nav-a:hover{
     color: var(--light);
     background: var(--darkB);
@@ -109,7 +109,6 @@ a.nav-a:focus{
 }
 
 
-
 a.nav-a{
     position: relative;
     padding: 0;
@@ -125,8 +124,9 @@ a.nav-a{
         font-size: 1.2rem;
         font-weight: 700;
         width: 110px;
-        line-height: 110px;
+        line-height: 107px;
     }
+  
     a.nav-a:last-child{
      border-right: 1px solid #515a69;
 
