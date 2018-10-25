@@ -52,6 +52,7 @@ function getImgs() {
 }
 
 function filterGImgs(keyword) {
+    keyword = keyword.toLowerCase();
     gFilteredImg = gImgs.filter(img => {
         var keywords = img.keywords
         return keywords.some(word => {
