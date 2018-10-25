@@ -223,11 +223,12 @@
     color: var(--dark);
     width: 48%;
     text-align: center;
+    background-color: var(--light);
 }
 
 .btn-save:hover{
     cursor: pointer;
-    background-color: var(--superLight);
+    background-color: var(--lightB);
 }
 
 .download-btn{
@@ -249,34 +250,38 @@
         
 @media( min-width:680px){
 
+    .canvasAndControl{
+        display: flex;
+        flex-direction: row;
+    }
+    .canvas-wrapper{
+        flex: 6;
+        margin-top: 10px;
+    }
 
-.canvas-wrapper{
-    max-width: 550px;
-    margin: 0 auto;
-}
+    .canvas-controllers{
+        flex: 4;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
 
-.canvas-controllers{
-    max-width: 550px;
-    margin: 0 auto;
-}
+    .font-charmonman {
+        font-family: 'Charmonman'
+    }
 
-.font-charmonman {
-    font-family: 'Charmonman'
-}
-
-.font-impact {
-    font-family: 'impact'
-}
-.font-roboto {
-    font-family: 'Roboto'
-}
-.font-combo {
-    font-family: 'Combo'
-}
-.font-coming {
-    font-family: 'coming'
-}
-.font-chakra {
-    font-family: 'Chakra Petch'
-}
+    .font-impact {
+        font-family: 'impact'
+    }
+    .font-roboto {
+        font-family: 'Roboto'
+    }
+    .font-combo {
+        font-family: 'Combo'
+    }
+    .font-coming {
+        font-family: 'coming'
+    }
+    .font-chakra {
+        font-family: 'Chakra Petch'
+    }
 }

@@ -5,8 +5,8 @@
 @import "helpers.css";
 
 
-
 /* Layout */
+
 *{
     margin: 0;
     box-sizing: border-box;
@@ -21,10 +21,12 @@
     --darkB: #505663;
     --mid: #70acb1;
     --midB: #659ea3;
-    --light: #bed6db;
-    --boom: #ff7c38;
+    --light: #d8dfe0;
+    --lightB:#c0cbcc;
+    --boom: #e93a23;
+    --boomB: #f5462f;
     --superLight: lightgray;
-  }
+}
 
 
 

@@ -9,14 +9,10 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Combo|Coming+Soon|Roboto|Charmonman" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Meme Generator</title>
+    <title>Meme Generator - Da Generator</title>
 </head>
 
 <body onload="init()">
-
-
-
-
 
     <section class="header-container">
 
@@ -24,7 +20,9 @@
             <div class="screen" onclick="toggleMenu()"></div>
 
             <div class="nav top-nav flex align-center space-between">
-                <div class="logo top-nav-logo" alt="Meme Generator" onclick="onBackBtn()">Da Generator</div>
+                <div class="logo top-nav-logo" alt="Meme Generator">
+                    <a href="index.html"> <img class="gene" src="img/generator.png" alt=""></a>
+                </div>
                 <nav class="main-nav ">
                     <a class="nav-a" href="index.html">Gallery</a>
                     <a class="nav-a" href="#">About</a>
@@ -36,92 +34,76 @@
         </div>
     </section>
 
-
-    <div class="about-page hide">
-        <div class="about-text-wrapper">
-            <p> This page was built by Amit and Elad</p>
-            <p> Hope you'll enjoy!</p>
-        </div>
-    </div>
-
     <main class="container main-container">
 
         <section class="gallery-container">
             <div class="filterBox flex">
                 <input type="text" class="filterImg" oninput="filterGImgs(this.value)" placeholder="Filter By Keywords">
                 <select class="dropdown-content" onchange="filterByDropdown(this.value)">
-
                 </select>
             </div>
             <div class="gallery"></div>
         </section>
-
 
         <section class="canvas-container hide">
 
             <button class="btn-closeEditor" onclick="onBackBtn()">
                 <span class="arrow"><i class="fas fa-arrow-left"></i></span>Back To Gallery
             </button>
-
-            <div class="canvas-wrapper">
-                <canvas class="main-canvas" onclick="onCanvasClick(event)"></canvas>
-            </div>
-
-            <div class="canvas-controllers flex column space-between">
-
-                <div class="input-box flex row space-between">
-                    <input type="text" placeholder="  your text here" class="input-line" id="line1" value="New line"
-                        onkeyup="onSetText(this)">
-                    <div class="delete-text" onclick="onDeleteText()"><i class="far fa-trash-alt"></i></div>
-                    <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
+            <div class="canvasAndControl">
+                <div class="canvas-wrapper">
+                    <canvas class="main-canvas" onclick="onCanvasClick(event)"></canvas>
                 </div>
 
+                <div class="canvas-controllers flex column ">
 
-                <div class="buttons flex wrap">
-                    <div class="font-input flex row center ">
-                        <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
-                        <!-- <div class="fontLine">Font Size<span class="fontSize"></span></div> -->
-                        <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
+                    <div class="input-box flex row space-between">
+                        <input type="text" placeholder="  your text here" class="input-line" id="line1" value="New line"
+                            onkeyup="onSetText(this)">
+                        <div class="delete-text" onclick="onDeleteText()"><i class="far fa-trash-alt"></i></div>
+                        <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
                     </div>
 
-                    <div class="color-input flex around">
-                        <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
+                    <div class="buttons flex wrap">
+                        <div class="font-input flex row center ">
+                            <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
+                            <!-- <div class="fontLine">Font Size<span class="fontSize"></span></div> -->
+                            <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
+                        </div>
 
-                        <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
+                        <div class="color-input flex around">
+                            <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
+                            <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
+                        </div>
+                        <select class="drop-down font-picker" onchange="onChangeFont(this.value)">
+                            <option selected="selected" value="impact" class="font-impact">Fonts <i class="fas fa-arrows-alt-v"></i></option>
+                            <option value="impact" class="font-impact">Impact</option>
+                            <option value="Charmonman" class="font-charmonman">Charmonman</option>
+                            <option value="Roboto" class="font-roboto">Roboto</option>
+                            <option value="Combo" class="font-combo">Combo</option>
+                            <option value="coming" class="font-coming">Coming-Soon</option>
+                            <option value="Chakra Petch" class="font-chakra">Chakra Petch</option>
+                        </select>
+
+                        <div class="move-btns">
+                            <button class="move-btn move-left move-left-line1" onclick="onMoveLeft(this)"><i class="fas fa-arrow-left"></i></button>
+                            <button class="move-btn move-up move-up-line1" onclick="onMoveUp(this)"><i class="fas fa-arrow-up"></i></button>
+                            <button class="move-btn move-down move-down-line1 " onclick="onMoveDown(this)"><i class="fas fa-arrow-down"></i></button>
+                            <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+
+                        <section class="shadow-container ">
+                            <div class="shadow-checkbox checked" onclick="handleShadowChange(this)">Shadow</div>
+                        </section>
+
+                        <div class="btn btn-save"><a class="download-btn" onclick="downloadCanvas(this)">Download</a></div>
                     </div>
-                    <select class="drop-down font-picker" onchange="onChangeFont(this.value)">
-                        <option selected="selected" value="impact" class="font-impact">Fonts <i class="fas fa-arrows-alt-v"></i></option>
-                        <option value="impact" class="font-impact">Impact</option>
-                        <option value="Charmonman" class="font-charmonman">Charmonman</option>
-                        <option value="Roboto" class="font-roboto">Roboto</option>
-                        <option value="Combo" class="font-combo">Combo</option>
-                        <option value="coming" class="font-coming">Coming-Soon</option>
-                        <option value="Chakra Petch" class="font-chakra">Chakra Petch</option>
-                    </select>
-
-                    <div class="move-btns">
-                        <button class="move-btn move-left move-left-line1" onclick="onMoveLeft(this)"><i class="fas fa-arrow-left"></i></button>
-                        <button class="move-btn move-up move-up-line1" onclick="onMoveUp(this)"><i class="fas fa-arrow-up"></i></button>
-                        <button class="move-btn move-down move-down-line1 " onclick="onMoveDown(this)"><i class="fas fa-arrow-down"></i></button>
-                        <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
-                    </div>
-
-                    <section class="shadow-container ">
-                        <div class="shadow-checkbox checked" onclick="handleShadowChange(this)">Shadow</div>
-                    </section>
-
-
-
-
-                    <div class="btn btn-save"><a class="download-btn" onclick="downloadCanvas(this)">Download</a></div>
-
                 </div>
-
             </div>
-
         </section>
     </main>
     <footer class="container"></footer>
+
 
     <script src="js/util-service.js"></script>
     <script src="js/canvas-service.js"></script>

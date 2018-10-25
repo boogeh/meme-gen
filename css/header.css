@@ -1,10 +1,10 @@
 .header-content{
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     font-size: 2.5rem;
     color: var(--light);
     height: 110px;
-    padding: 25px 25px;
+    /* padding: 25px 25px; */
     background-color: var(--dark);
 
 }
@@ -26,14 +26,20 @@
     opacity: 1;
     visibility: visible;
 }
+.gene{
+    padding-top: 5px;
+    height: 100px;
+    width: auto;
+}
 
 .top-nav-logo{
     font-size: 2rem;
     min-width: 220px;
-    padding-left: 20px;
+    padding-left: 30px;
     color: var(--light);
     text-transform: capitalize;
 }
+
 .top-nav{
     width: 100%;
 }
@@ -63,6 +69,7 @@ a.nav-a{
     padding-left: 20px;
     text-align: center;
 }
+
 a.nav-a:first-child{
     margin-top: 2px;
   }
@@ -72,6 +79,7 @@ a.nav-a:hover{
     background: var(--darkB);
 
 }
+
 a.nav-a:focus{
     color: var(--light);
 }
@@ -79,66 +87,69 @@ a.nav-a:focus{
 
 
 .hamburger{
-    font-size: 2rem;
+    padding-right: 20px;
+    font-size: 2.2rem;
 }
 
 .hamburger:hover{
     cursor: pointer;
 }
+
+
 @media (min-width: 680px){
     .header-content{
         padding: 0;
     }
+
     .main-nav{
         display: flex;
-
-
     }
     .hamburger{
         display: none;
     }
 
-.bottom-nav-logo{
-    color: var(--light);
+    .bottom-nav-logo{
+        color: var(--light);
 
-    font-size: 40pt;
-    text-transform: capitalize;
-}
-.logo:hover{
-    cursor: pointer;
-}
+        font-size: 40pt;
+        text-transform: capitalize;
+    }
 
+    .logo:hover{
+        cursor: pointer;
+    }
 
-a.nav-a{
-    position: relative;
-    padding: 0;
-    text-transform: capitalize;
-    text-decoration: none;
-    font-size: 2rem;
-
-    color: var(--light);
-    background-color: var(--dark);
-    transition: color .3s;
-    display: inline-block;
+    a.nav-a{
+        position: relative;
+        padding: 0;
+        text-transform: capitalize;
+        text-decoration: none;
+        font-size: 2rem;
+        color: var(--light);
+        background-color: var(--dark);
+        transition: color .3s;
+        display: inline-block;
         border-left: 1px solid #515a69;
         font-size: 1.2rem;
         font-weight: 700;
         width: 110px;
         line-height: 110px;
     }
+
     a.nav-a:first-child{
         margin-top: 0;
-      }
-  
-    a.nav-a:last-child{
-     border-right: 1px solid #515a69;
-
     }
+
+    a.nav-a:last-child{
+        border-right: 1px solid #515a69;
+    }
+
     a.nav-a:hover{
         background-color: #4b535f;
     }
+
     a.nav-a:focus{
-       color: var(--mid);
+        color: var(--mid);
     }
 
 
