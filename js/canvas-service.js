@@ -81,7 +81,6 @@ function setStrokeColor(elColor) {
 }
 
 function downloadCanvas(elLink) {
-    console.log(gCanvas.toDataURL())
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'meme.jpg'
 }
@@ -121,7 +120,7 @@ function deleteText() {
 }
 
 function shadowChange(elBox) {
-    var checked = elBox.checked
+    var checked = elBox.classList.contains('checked')
     if (checked) {
         gCurrText.shadow = true;
     } else {

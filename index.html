@@ -99,14 +99,14 @@
                         <button class="move-btn move-right move-right-line1" onclick="onMoveRight(this)"><i class="fas fa-arrow-right"></i></button>
                     </div>
                     <section title=".slideOne">
-                        <div class="shadow-container slideOne">shadow
-                            <input type="checkbox" class="shadow-checkbox" name="check" id="slideOne" onchange="handleShadowChange(this)">
+                        <div class="shadow-container slideOne">
+                            <div class="shadow-checkbox checked" onclick="handleShadowChange(this)">Shadow</div>
                             <label for="slideOne"></label>
                         </div>
                     </section>
 
                     <select class="drop-down font-picker" onchange="onChangeFont(this.value)">
-                        <option selected="selected" value="impact" class="font-impact">Impact</option>
+                        <option value="impact" class="font-impact">Impact</option>
                         <option value="Charmonman" class="font-charmonman">Charmonman</option>
                         <option value="Roboto" class="font-roboto">Roboto</option>
                         <option value="Combo" class="font-combo">Combo</option>
@@ -115,7 +115,7 @@
                     </select>
 
 
-                    <div class="btn btn-save" onclick="downloadCanvas(this)">Download</div>
+                    <div class="btn btn-save"><a onclick="downloadCanvas(this)">Download</a></div>
 
                 </div>
 
