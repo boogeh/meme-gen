@@ -3,8 +3,9 @@ var gPopularWords;
 var gCanvas;
 var gCtx;
 var gSettings;
-var gText = 
-{ line1: {
+var gText =
+{
+    line1: {
         id: 'line1',
         txt: '',
         x: 70,
@@ -22,17 +23,20 @@ var gMeme = {
     selectedElImg: null, // TODO
     txts: [
         {
-            line: '',
-            size: '',
+            txt: '',
+            size: 30,
             align: '',
-            colorFill: '',
-            colorStroke: '',
-            font: '',
-            x: '',
-            y: '',
+            fillColor: '#ffffff',
+            strokeColor: '#000000',
+            font: 'Impact',
+            shadow: false,
+            x: 150,
+            y: 150,
         },
     ]
 }
+
+var gCurrText = gMeme.txts[0]
 
 
 function setCanvas() {
@@ -40,8 +44,7 @@ function setCanvas() {
     gCanvas = document.querySelector('.main-canvas')
     gCanvas.width = elCanvasDiv.clientWidth; // canvas width same as img width
     gCtx = gCanvas.getContext('2d')
-    resetSettings();
-    setFontSize();
+    // resetSettings();
 }
 
 function drawImage(elImg) {
@@ -59,82 +62,114 @@ function backToGallery() {
 
 
 function setText(elText) {
-    var textLineId = elText['id'];
-    var textLine = elText['value'];
-    gText[textLineId].txt = textLine
+    // var textLineId = elText['id'];
+    var textLine = elText.value;
+    console.log(gCurrText.txt)
+    gCurrText.txt = textLine
     draw()
 }
 function draw() {
-    var elImg = gSettings.elImg
+    var elImg = gMeme.selectedElImg
     drawImage(elImg)
-    gCtx.font = gSettings.fontSize + 'px ' + gSettings.font;
-    gCtx.strokeStyle = gSettings.strokeColor;
-    gCtx.fillStyle = gSettings.fillColor;
-    gCtx.lineWidth = 5;
-    gCtx.strokeText(gText.line1.txt, gText.line1.x, gText.line1.y);
-    gCtx.fillText(gText.line1.txt, gText.line1.x, gText.line1.y);
+    for (let i = 0; i < gMeme.txts.length; i++) {
+        var currText = gMeme.txts[i]
+        gCtx.font = currText.size + 'px ' + currText.font;
+        gCtx.strokeStyle = currText.strokeColor;
+        gCtx.fillStyle = currText.fillColor;
+        gCtx.lineWidth = 5;
+        gCtx.strokeText(currText.txt, currText.x, currText.y);
+        gCtx.fillText(currText.txt, currText.x, currText.y);
+    }
 }
 
-function setFontSize() {
-    gSettings.fontSize = Math.round(gCanvas.width / 15);
-}
+// function setFontSize() {
+//     gCurrText.fontSize = Math.round(gCanvas.width / 15);
+// }
 
 function fontMinus() {
-    gSettings.fontSize -= 2;
+    gCurrText.size -= 2;
     draw();
 }
 
 function fontPlus() {
-    gSettings.fontSize += 2;
+    gCurrText.size += 2;
     draw();
 }
 
 function setFillColor(elColor) {
-    gSettings.fillColor = elColor;
+    gCurrText.fillColor = elColor;
     draw();
 }
 
 function setStrokeColor(elColor) {
-    gSettings.strokeColor = elColor;
+    gCurrText.strokeColor = elColor;
     draw();
 }
 
 
-function resetSettings() {
-    gSettings = {
-        elImg: '',
-        line1: '',
-        line2: '',
-        fontSize: '',
-        strokeColor: '#000000',
-        fillColor: '#ffffff',
-        shadow: false,
-        font: 'Arial',
-    }
-}
+// function resetSettings() {
+//     gSettings = {
+//         elImg: '',
+//         line1: '',
+//         line2: '',
+//         fontSize: '',
+//         strokeColor: '#000000',
+//         fillColor: '#ffffff',
+//         shadow: false,
+//         font: 'Arial',
+//     }
+// }
 
 function downloadCanvas(elLink) {
     console.log(gCanvas.toDataURL())
     elLink.href = gCanvas.toDataURL()
     elLink.download = 'mem.jpg'
 }
-<<<<<<< HEAD
 
-function moveUp(elBtn){
-    
+function moveUp() {
+    gCurrText.y -= 10
+    draw()
 }
 function moveDown(elBtn) {
-    console.log(elBtn)
+    gCurrText.y += 10
+    draw()
 }
 function moveLeft(elBtn) {
-    console.log(elBtn)
+    gCurrText.x -= 10
+    draw()
 }
 function moveRight(elBtn) {
-    console.log(elBtn)
+    gCurrText.x += 10
+    draw()
 }
-=======
-<<<<<<< HEAD
-renderPopularKeywords();
+
+function newLine() {
+    return {
+        txt: 'New line',
+        size: 30,
+        align: '',
+        fillColor: '#ffffff',
+        strokeColor: '#000000',
+        font: 'impact',
+        shadow: false,
+        x: 150,
+        y: 150,
+    }
+}
+
+function addLine() {
+    var newLineTemplate = newLine()
+    gMeme.txts.push(newLineTemplate)
+    gCurrText = newLineTemplate
+    draw()
+}
+
+function getCurrText() {
+    return gCurrText
+}
+
+
+// renderPopularKeywords();
 
 function renderPopularKeywords() {
     var elSearchWord = document.querySelectorAll('.option-filler')
@@ -148,7 +183,6 @@ function renderPopularKeywords() {
         console.log(elSearchWord);
 
     }
-
 }
 function mapByKeywords() {
     var popularWords = {};
@@ -184,27 +218,23 @@ function drawCharts() {
     });
 }
 
-function canvasClicked(ev) {
-    var elModal = document.querySelector('.modal')
+// function canvasClicked(ev) {
+//     var elModal = document.querySelector('.modal')
 
-    var textLine = gMeme.txts.find(function (textLine) {
-        return (
-            ev.clientX > textLine.x &&
-            ev.clientX < textLine.x + 100 &&
-            ev.clientY > textLine.y &&
-            ev.clientY < textLine.y + textLine.size
-        )
-    })
-    if (textLine) {
-        elModal.style.display = 'block'
-        elModal.innerText = 'Name: ' + textLine.name + ' Rate: ' + textLine.rate
-        elModal.style.top = ev.clientY + 'px'
-        elModal.style.left = ev.clientX + 'px'
-    } else {
-        elModal.style.display = 'none'
-    }
-}
-
-=======
->>>>>>> be4361c9d0e56dd05db36968f9cbfc358ae85f17
->>>>>>> b1ed8fbd739ff87afe1416c2e27875305f8fc885
+//     var textLine = gMeme.txts.find(function (textLine) {
+//         return (
+//             ev.clientX > textLine.x &&
+//             ev.clientX < textLine.x + 100 &&
+//             ev.clientY > textLine.y &&
+//             ev.clientY < textLine.y + textLine.size
+//         )
+//     })
+//     if (textLine) {
+//         elModal.style.display = 'block'
+//         elModal.innerText = 'Name: ' + textLine.name + ' Rate: ' + textLine.rate
+//         elModal.style.top = ev.clientY + 'px'
+//         elModal.style.left = ev.clientX + 'px'
+//     } else {
+//         elModal.style.display = 'none'
+//     }
+// }

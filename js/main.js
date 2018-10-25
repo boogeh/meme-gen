@@ -47,22 +47,35 @@ function clearInputs() {
     document.querySelector('#line1').value = ''   
     // document.querySelector('#line2').value = ''
     document.querySelector('.shadow-checkbox').checked = false;
-    resetSettings()
+    // resetSettings()
 }
 
-function onMoveUp(elBtn) {
-    moveUp(elBtn)
+function onMoveUp() {
+    moveUp()
 }
 
-function onMoveDown(elBtn) {
-    moveDown(elBtn)
+function onMoveDown() {
+    moveDown()
 }
 
-function onMoveLeft(elBtn) {
-    moveLeft(elBtn)
+function onMoveLeft() {
+    moveLeft()
 }
 
-function onMoveRight(elBtn) {
-    moveRight(elBtn)
+function onMoveRight() {
+    moveRight()
 }
 
+function onAddLine() {
+    addLine()
+    renderInputs()
+}
+
+function renderInputs() {
+    var currText = getCurrText()
+    document.querySelector('.fill-color').value = currText.fillColor;
+    document.querySelector('.stroke-color').value = currText.strokeColor;
+    document.querySelector('.input-line').value = currText.txt;
+    document.querySelector('.shadow-checkbox').checked = currText.shadow;
+    document.querySelector('.font-picker').value = currText.font;
+}

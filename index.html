@@ -62,7 +62,7 @@
                     <div class="shadow-container">Shadow</div>
                     <input type="checkbox" class="shadow-checkbox">
 
-                    <select class="drop-down img=filter" onchange="filterByDropdown(this.value)">
+                    <select class="drop-down font-picker" onchange="filterByDropdown(this.value)">
                         <option selected="selected" value="impact">Impact</option>
                         <option value="arial">Arial</option>
                         <option value="arial">Font</option>
@@ -71,11 +71,12 @@
                 </div>
 
                 <div class="input-lines flex column">
-                    <input type="text" placeholder="Add line 1" class="input-line" id="line1" onkeyup="onSetText(this)">
+                    <input type="text" placeholder="Add line" class="input-line" id="line1" value="New line" onkeyup="onSetText(this)">
                     <button class="move-up move-up-line1 line1" onclick="onMoveUp(this)">Up</button>
                     <button class="move-down move-down-line1 line1" onclick="onMoveDown(this)">Down</button>
                     <button class="move-left move-left-line1 line1" onclick="onMoveLeft(this)">Left</button>
                     <button class="move-right move-right-line1 line1" onclick="onMoveRight(this)">Right</button>
+                    <button class="add-line" onclick="onAddLine()">Add Line</button>
                 </div>
             </div>
         </section>
