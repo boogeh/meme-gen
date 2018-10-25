@@ -26,13 +26,9 @@ function onImgSelect(elImg) {
     drawImage(elImg);
 }
 
-function backToGallery() {
+function onBackBtn() {
     document.querySelector('.canvas-container').classList.add('hide');
     document.querySelector('.gallery-container').classList.remove('hide');
-}
-
-function onBackBtn() {
-    backToGallery();
 }
 
 function onSetText(elText) {

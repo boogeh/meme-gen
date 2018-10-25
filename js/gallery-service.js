@@ -46,13 +46,6 @@ function createImg(url, ...keywords) {
     return img
 }
 
-function getImgById(imgId) {
-    var findImg = gImgs.find(img => {
-        return imgId === img.id
-    })
-    return findImg;
-}
-
 function getImgs() {
     if (gFilteredImg) return gFilteredImg;
     else return gImgs;
@@ -73,9 +66,6 @@ function filterGImgs(keyword) {
 function filterByDropdown(keyword) {
     filterGImgs(keyword);
 }
-
-
-
 
 function mapByKeywords() {
     var popularWords = {};
@@ -101,14 +91,4 @@ function sortPopularWords() {
     gPopularWords = sortedPopular;
 
 }
-
-// function drawCharts() {
-//     gStars.forEach((star, idx) => {
-//         gCtx.fillStyle = 'black';
-//         star.x = idx * (barWidth + 10);
-//         star.y = gCanvas.height - star.rate * heightFactor;
-//         gCtx.fillRect(star.x, star.y, barWidth, star.rate * heightFactor);
-//     });
-// }
-
 
