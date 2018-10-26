@@ -2,7 +2,6 @@
 
 function init() {
     renderGallery();
-    sortPopularWords();
     renderPopularKeywords();
 }
 
@@ -109,6 +108,7 @@ function renderInputs() {
 
 
 function renderPopularKeywords() {
+    sortPopularWords();
     var elSearchWord = document.querySelector('.dropdown-content')
     var keywords = [`<option selected="selected" value="all">All</option>`]
     for (let i = 0; i < 4; i++) {

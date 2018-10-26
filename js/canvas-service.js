@@ -19,7 +19,6 @@ function resetMeme() {
     gCurrText = gMeme.txts[0]
 }
 
-
 function createMeme() {
     return {
         selectedElImg: null,
@@ -111,7 +110,7 @@ function findCurrTextIdx() {
 
 function deleteText() {
     var txtIdx = findCurrTextIdx()
-    gMeme.txts.splice(txtIdx, 1) 
+    gMeme.txts.splice(txtIdx, 1)
     if (!gMeme.txts.length) {
         addLine()
     }

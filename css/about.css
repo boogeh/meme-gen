@@ -7,6 +7,11 @@
     width: 100%;
 }
 
+h3{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 .img-container{
     margin: 0 auto;
     max-width: 450px;
@@ -14,8 +19,10 @@
 .about-img{
     padding-bottom: 30px;
     cursor: default;
-
+    padding-right: 15px;
+    padding-left: 15px;
 }
+
 .donate-img{
     padding: 15px;
     width: 150px;
