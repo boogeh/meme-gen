@@ -6,6 +6,8 @@ var gCurrText;
 var gMeme;
 var gDrag = false;
 var isLine = false;
+var gDiffX;
+var gDiffY;
 
 var currX, currY, prevX, prevY = 0;
 
@@ -79,14 +81,15 @@ function draw() {
 }
 
 function mouseEvent(res, ev) {
+
     if (res === 'down' && (isLine)) {
         prevX = currX;
         prevY = currY;
-        var diffX = Math.abs(gCurrText.x - ev.clientX)
-        var diffY = Math.abs(gCurrText.y - ev.clientY)
         currX = gCurrText.x;
         currY = gCurrText.y;
-        gDrag = true
+        gDrag = true;
+        gDiffX = Math.abs(gCurrText.x - ev.layerX);
+        gDiffY = Math.abs(gCurrText.y - ev.layerY);
     }
     if (res === 'up' || res === "out") {
         gDrag = false;
@@ -95,8 +98,8 @@ function mouseEvent(res, ev) {
         if (gDrag) {
             prevX = currX;
             prevY = currY;
-            currX = ev.clientX - gCanvas.offsetLeft;
-            currY = ev.clientY - gCanvas.offsetTop ;
+            currX = ev.clientX - gCanvas.offsetLeft - gDiffX;
+            currY = ev.clientY - gCanvas.offsetTop + gDiffY;
             moveLine();
         }
     }
