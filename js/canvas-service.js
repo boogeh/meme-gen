@@ -4,6 +4,10 @@ var gCanvas;
 var gCtx;
 var gCurrText;
 var gMeme;
+var gDrag = false;
+var isLine = false;
+
+var currX, currY, prevX, prevY = 0;
 
 
 function setCanvas() {
@@ -11,8 +15,23 @@ function setCanvas() {
     gCanvas = document.querySelector('.main-canvas')
     gCanvas.width = elCanvasDiv.clientWidth; // canvas width same as img width
     gCtx = gCanvas.getContext('2d')
+    mouseEventListener();
 }
 
+function mouseEventListener() {
+    gCanvas.addEventListener("mousemove", function (ev) {
+        mouseEvent('move', ev)
+    });
+    gCanvas.addEventListener("mousedown", function (ev) {
+        mouseEvent('down', ev)
+    });
+    gCanvas.addEventListener("mouseup", function (ev) {
+        mouseEvent('up', ev)
+    });
+    gCanvas.addEventListener("mouseout", function (ev) {
+        mouseEvent('out', ev)
+    });
+}
 
 function resetMeme() {
     gMeme = createMeme();
@@ -57,6 +76,37 @@ function draw() {
         currText.txtWidth = gCtx.measureText(currText.txt).width
         gCtx.fillText(currText.txt, currText.x, currText.y);
     }
+}
+
+function mouseEvent(res, ev) {
+    if (res === 'down' && (isLine)) {
+        prevX = currX;
+        prevY = currY;
+        var diffX = Math.abs(gCurrText.x - ev.clientX)
+        var diffY = Math.abs(gCurrText.y - ev.clientY)
+        currX = gCurrText.x;
+        currY = gCurrText.y;
+        gDrag = true
+    }
+    if (res === 'up' || res === "out") {
+        gDrag = false;
+    }
+    if (res === 'move') {
+        if (gDrag) {
+            prevX = currX;
+            prevY = currY;
+            currX = ev.clientX - gCanvas.offsetLeft;
+            currY = ev.clientY - gCanvas.offsetTop ;
+            moveLine();
+        }
+    }
+}
+
+function moveLine() {
+    gCurrText.x = currX
+    gCurrText.y = currY
+    draw();
+
 }
 
 function fontMinus() {
@@ -159,7 +209,6 @@ function getCurrText() {
     return gCurrText
 }
 
-
 function canvasClick(ev) {
     var textLine = gMeme.txts.find(function (textLine) {
         return (
@@ -170,6 +219,7 @@ function canvasClick(ev) {
         )
     })
     if (textLine) {
-        gCurrText = textLine
-    }
+        gCurrText = textLine;
+        isLine = true;
+    } else isLine = false;
 }

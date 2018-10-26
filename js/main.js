@@ -3,6 +3,7 @@
 function init() {
     renderGallery();
     renderPopularKeywords();
+    
 }
 
 function renderGallery() {
@@ -24,6 +25,7 @@ function onImgSelect(elImg) {
     renderInputs()
     drawImage(elImg);
 }
+
 
 function onBackBtn() {
     document.querySelector('.canvas-container').classList.add('hide');
