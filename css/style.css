@@ -1,3 +1,5 @@
+@import "about.css";
+@import "contact.css";
 @import "header.css";
 @import "footer.css";
 @import "gallery.css";
@@ -18,10 +20,13 @@
 
 :root {
     --dark: #59606d;
-    --darkB: #505663;
-    --mid: #70acb1;
-    --midB: #659ea3;
-    --light: #d8dfe0;
+    --darkA: #68707e;
+    --darkB: #878fa0;
+    /* --mid: #70acb1;
+    --midB: #659ea3; */
+    --mid: #5e7a86;
+    --midB: #65818f;
+    --light: #c9cbd3;
     --lightB:#c0cbcc;
     --boom: #e93a23;
     --boomB: #f5462f;

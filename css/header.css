@@ -32,6 +32,11 @@
     width: auto;
 }
 
+.gene:hover{
+    transform: none;
+
+}
+
 .top-nav-logo{
     font-size: 2rem;
     min-width: 220px;
@@ -94,6 +99,9 @@ a.nav-a:focus{
 .hamburger:hover{
     cursor: pointer;
 }
+.dropdown-content:hover{
+    cursor: pointer;
+}
 
 
 @media (min-width: 680px){
@@ -145,12 +153,13 @@ a.nav-a:focus{
     }
 
     a.nav-a:hover{
-        background-color: #4b535f;
+        /* color: var(--darkB); */
+        background-color: var(--darkA)
     }
 
-    a.nav-a:focus{
+    /* a.nav-a:focus{
         color: var(--mid);
-    }
+    } */
 
 
 }

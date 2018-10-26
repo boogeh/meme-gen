@@ -9,10 +9,12 @@ img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: 0.3s;
 }
 
 img:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .filterBox{

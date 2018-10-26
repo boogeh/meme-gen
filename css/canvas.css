@@ -43,16 +43,21 @@
 }
 
 .color-pick{
+    position: relative;
+    top: 4px;
     border: none;
-    background-color:white;
+    background: none;
     width: 2.2rem;
     height: 1.8rem;
     padding: 0;
+    
+    
     margin: 0;
     transition: 0.3s;
 }
 .color-pick:hover{
     cursor: pointer;
+    transform: scale(1.2);
 }
 .arrow{
     margin-right: 60px;
@@ -78,34 +83,43 @@
     margin-left: 12px;
     padding: 5px;
     font-size: 1.2rem;
+    transition: 0.3s;
 }
 
 .delete-text:hover{
     cursor: pointer;
-    background-color: var(--superLight);
+    color: var(--darkB);
+    transform: scale(1.2);
+
 }
 
 .add-line{
     margin-left: 12px;
     padding: 5px;
     font-size: 1.2rem;
+    transition: 0.3s;
 }
 
 .add-line:hover{
     cursor: pointer;
-    background-color: var(--superLight);
+    color: var(--darkB);
+    transform: scale(1.2);
+
 }
+
 
 .font-minus{
     margin-top: 4px;
     padding: 5px;
     font-size: 1.2rem;
     transition: 0.3s;
+    transform: scale(1.2);
+
 }
 
 .font-minus:hover{
     cursor: pointer;
-    background-color: var(--superLight);
+    color: var(--darkB);
 }
 
 .font-plus{
@@ -119,7 +133,9 @@
 
 .font-plus:hover{
     cursor: pointer;
-    background-color: var(--superLight);
+    color: var(--darkB);
+    transform: scale(1.2);
+
 }
 
 .font-input{
@@ -156,7 +172,6 @@
 .font-picker{
     width: 48%;
     height: 39px;
-    padding-left: 15%;
     margin-right: 4%;
     border: 1px solid var(--superLight);
     background:none;
@@ -182,27 +197,28 @@
     background: none;
     outline: none;
     border: none;
-    color: var(--dark);
     transition: 0.3s;
 
 }
 
 .move-btn:hover{
     cursor: pointer;
-    background-color: var(--superLight);
+    color: var(--darkB);
+    transform: scale(1.2);
     
 }
 
 .shadow-container{
     text-transform: uppercase;
     width: 48%;
-    padding-top: 8px;
     height: 39px;
     margin-right: 4%;
     text-align: center;
     border: 1px solid var(--superLight);
     color: var(--dark);
     transition: 0.3s;
+    margin-bottom: 20px;
+
 
 }
 
@@ -216,19 +232,20 @@
 }
 
 .btn-save{
-    border: 1px solid var(--superLight);
+    border: 1px solid var(--boom);
     height: 39px;
-    padding-top: 8px;
     text-transform: uppercase;
     color: var(--dark);
     width: 48%;
     text-align: center;
-    background-color: var(--light);
+    margin-bottom: 20px;
+    transition: 0.3s;
+
 }
 
 .btn-save:hover{
     cursor: pointer;
-    background-color: var(--lightB);
+    background-color: var(--superLight);
 }
 
 .download-btn{

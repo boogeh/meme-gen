@@ -1,0 +1,25 @@
+.about-container{
+    text-align: center;
+    margin: 20px auto;
+    padding: 15px 0;
+    color: var(--superLight);
+    background-color: var(--mid);
+    width: 100%;
+}
+
+.img-container{
+    margin: 0 auto;
+    max-width: 450px;
+}
+.about-img{
+    padding-bottom: 30px;
+    cursor: default;
+
+}
+.donate-img{
+    padding: 15px;
+    width: 150px;
+}
+.about-img:hover{
+transform: none;
+}

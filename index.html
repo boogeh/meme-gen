@@ -9,7 +9,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Combo|Coming+Soon|Roboto|Charmonman" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Meme Generator - Da Generator</title>
+    <title>Da Generator</title>
 </head>
 
 <body onload="init()">
@@ -25,8 +25,8 @@
                 </div>
                 <nav class="main-nav ">
                     <a class="nav-a" href="index.html">Gallery</a>
-                    <a class="nav-a" href="#">About</a>
-                    <a class="nav-a" href="#">Contact</a>
+                    <a class="nav-a" href="about.html">About</a>
+                    <a class="nav-a" href="contact.html">Contact</a>
                 </nav>
             </div>
             <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i>
@@ -38,7 +38,7 @@
 
         <section class="gallery-container">
             <div class="filterBox flex">
-                <input type="text" class="filterImg" oninput="filterGImgs(this.value)" placeholder="Filter By Keywords">
+                <input type="text" class="filterImg" oninput="filterGImgs(this.value)" placeholder="&emsp;Filter By Keywords">
                 <select class="dropdown-content" onchange="filterByDropdown(this.value)">
                 </select>
             </div>
@@ -58,7 +58,7 @@
                 <div class="canvas-controllers flex column ">
 
                     <div class="input-box flex row space-between">
-                        <input type="text" placeholder="  your text here" class="input-line" id="line1" value="New line"
+                        <input type="text" placeholder=" &emsp; your text here" class="input-line" id="line1" value="New line"
                             onkeyup="onSetText(this)">
                         <div class="delete-text" onclick="onDeleteText()"><i class="far fa-trash-alt"></i></div>
                         <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
@@ -67,7 +67,6 @@
                     <div class="buttons flex wrap">
                         <div class="font-input flex row center ">
                             <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
-                            <!-- <div class="fontLine">Font Size<span class="fontSize"></span></div> -->
                             <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
                         </div>
 
@@ -76,7 +75,7 @@
                             <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
                         </div>
                         <select class="drop-down font-picker" onchange="onChangeFont(this.value)">
-                            <option selected="selected" value="impact" class="font-impact">Fonts <i class="fas fa-arrows-alt-v"></i></option>
+                            <option selected="selected" value="impact" class="font-impact">&emsp;Fonts <i class="fas fa-arrows-alt-v"></i></option>
                             <option value="impact" class="font-impact">Impact</option>
                             <option value="Charmonman" class="font-charmonman">Charmonman</option>
                             <option value="Roboto" class="font-roboto">Roboto</option>
@@ -93,10 +92,10 @@
                         </div>
 
                         <section class="shadow-container ">
-                            <div class="shadow-checkbox checked" onclick="handleShadowChange(this)">Shadow</div>
+                            <div class="shadow-checkbox checked" onclick="handleShadowChange(this)">&emsp;Shadow</div>
                         </section>
 
-                        <div class="btn btn-save"><a class="download-btn" onclick="downloadCanvas(this)">Download</a></div>
+                        <div class="btn-save"><a class="download-btn" onclick="downloadCanvas(this)">Download</a></div>
                     </div>
                 </div>
             </div>
