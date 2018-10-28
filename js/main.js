@@ -20,6 +20,7 @@ function renderGallery() {
 function onImgSelect(elImg) {
     document.querySelector('.canvas-container').classList.remove('hide');
     document.querySelector('.gallery-container').classList.add('hide');
+    document.querySelector('.header-content').classList.add('hide');
     setCanvas()
     resetMeme()
     renderInputs()
@@ -30,6 +31,8 @@ function onImgSelect(elImg) {
 function onBackBtn() {
     document.querySelector('.canvas-container').classList.add('hide');
     document.querySelector('.gallery-container').classList.remove('hide');
+    document.querySelector('.header-content').classList.remove('hide');
+
 }
 
 function onSetText(elText) {
