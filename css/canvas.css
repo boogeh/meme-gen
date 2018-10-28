@@ -149,6 +149,7 @@
 
 .font-input{
     width:48%;
+    height: 39px;
     color: var(--dark);
     border: 1px solid var(--superLight);
     margin-bottom: 5px;
@@ -165,6 +166,8 @@
 .color-input{
     text-align: center;
     width: 48%;
+    height: 39px;
+
     color: var(--dark);
     border: 1px solid var(--superLight);
     margin-bottom: 5px;
@@ -181,7 +184,6 @@
 .font-picker{
     width: 48%;
     height: 39px;
-    /* text-align: center; */
     margin-right: 4%;
     border: 1px solid var(--superLight);
     background:none;
