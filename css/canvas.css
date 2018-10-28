@@ -109,7 +109,7 @@
 
 
 .font-minus{
-    margin-top: 4px;
+    /* margin-top: 4px; */
     padding: 5px;
     font-size: 1.2rem;
     transition: 0.3s;
@@ -122,9 +122,18 @@
     color: var(--darkB);
 }
 
+.font-icon{
+    color: var(--darkB);
+    margin-left: 8px;
+    /* margin-top: 4px; */
+    padding: 5px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+
+}
 .font-plus{
     margin-left: 8px;
-    margin-top: 4px;
+    /* margin-top: 4px; */
     padding: 5px;
     font-size: 1.2rem;
     transition: 0.3s;
@@ -172,6 +181,7 @@
 .font-picker{
     width: 48%;
     height: 39px;
+    /* text-align: center; */
     margin-right: 4%;
     border: 1px solid var(--superLight);
     background:none;

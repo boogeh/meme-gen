@@ -60,18 +60,21 @@
                     <div class="input-box flex row space-between">
                         <input type="text" placeholder=" &emsp; your text here" class="input-line" id="line1" value="New line"
                             onkeyup="onSetText(this)">
-                        <div class="delete-text" onclick="onDeleteText()"><i class="far fa-trash-alt"></i></div>
                         <div class="add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></div>
+                        <div class="delete-text" onclick="onDeleteText()"><i class="far fa-trash-alt"></i></div>
                     </div>
 
                     <div class="buttons flex wrap">
                         <div class="font-input flex row center ">
                             <div class="font-minus" onclick="fontMinus()"><i class="fas fa-minus"></i></div>
+                            <div class="font-icon"> <i class="fas fa-font"></i></div>
                             <div class="font-plus" onclick="fontPlus()"><i class="fas fa-plus"></i></div>
                         </div>
 
                         <div class="color-input flex around">
                             <input type="color" class="color-pick fill-color" value="#fffffe" onchange="onSetFillColor(this.value)">
+                            <div class="font-icon"><i class="fas fa-paint-brush"></i></div>
+
                             <input type="color" class="color-pick stroke-color" value="#000002" onchange="onSetStrokeColor(this.value)">
                         </div>
                         <select class="drop-down font-picker" onchange="onChangeFont(this.value)">

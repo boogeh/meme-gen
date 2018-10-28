@@ -109,7 +109,6 @@ function moveLine() {
     gCurrText.x = currX
     gCurrText.y = currY
     draw();
-
 }
 
 function fontMinus() {
